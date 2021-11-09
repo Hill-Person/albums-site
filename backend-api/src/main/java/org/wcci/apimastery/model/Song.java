@@ -15,11 +15,11 @@ public class Song {
 
     @ManyToOne
     @JsonIgnore
-    private Album album;
+    private Album albums;
 
     public Song(String name, String artist, Album album) {
         this.name = name;
-        this.album = album;
+        this.albums = album;
     }
 
     public Song(){
@@ -39,6 +39,6 @@ public class Song {
     }
 
     public Album getAlbum() {
-        return album;
+        return albums;
     }
 }

@@ -15,7 +15,7 @@ public class Album {
     private String name;
     private String description;
 
-    @OneToMany
+    @OneToMany(mappedBy = "albums")
     private Collection<Song> songs;
 
     public Album(String name, String description) {
