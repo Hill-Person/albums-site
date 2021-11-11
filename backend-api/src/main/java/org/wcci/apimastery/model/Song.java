@@ -2,11 +2,14 @@ package org.wcci.apimastery.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+//import javax.persistence.*;
 
 @Entity
 public class Song {
-
     @Id
     @GeneratedValue
     private long id;
@@ -19,10 +22,11 @@ public class Song {
 
     public Song(String name, String artist, Album album) {
         this.name = name;
+        this.artist = artist;
         this.albums = album;
     }
 
-    public Song(){
+    protected Song(){
         //zero argument constructor
     }
 

@@ -23,7 +23,7 @@ public class Album {
         this.description = description;
     }
 
-    public Album(){
+    protected Album(){
         //zero argument constructor
     }
 
