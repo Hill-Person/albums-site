@@ -6,4 +6,5 @@ import org.wcci.apimastery.model.Album;
 
 public interface AlbumRepository extends CrudRepository<Album,  Long> {
 
+
 }
