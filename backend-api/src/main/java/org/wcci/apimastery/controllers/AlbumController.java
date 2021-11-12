@@ -28,7 +28,6 @@ public class AlbumController {
         return albumRepo.findById(id).get();
     }
 
-
     @PostMapping("/")
     public Iterable<Album> addAlbum(@RequestBody Album addAlbum){
         albumRepo.save(addAlbum);
@@ -41,5 +40,7 @@ public class AlbumController {
 //        songRepo.save(addSong);
 //        return albumRepo.findById(id).get();
 //    }
+
+
 
 }
