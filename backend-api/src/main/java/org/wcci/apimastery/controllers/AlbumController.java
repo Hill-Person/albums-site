@@ -24,7 +24,7 @@ public class AlbumController {
     }
 
     @GetMapping("/{id}")
-    public Album retrieveSingleAlbum(@PathVariable long id){
+    public Album retrieveSingleAlbum(@PathVariable Long id){
         return albumRepo.findById(id).get();
     }
 
@@ -41,6 +41,5 @@ public class AlbumController {
 //        songRepo.save(addSong);
 //        return albumRepo.findById(id).get();
 //    }
-
 
 }

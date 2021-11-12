@@ -11,7 +11,7 @@ public class Album {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String name;
     private String description;
 
@@ -27,7 +27,7 @@ public class Album {
         //zero argument constructor
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 public class Song {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String name;
     private String artist;
 
@@ -30,7 +30,7 @@ public class Song {
         //zero argument constructor
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -42,7 +42,7 @@ public class Song {
         return artist;
     }
 
-    public Album getAlbum() {
+    public Album getAlbums() {
         return albums;
     }
 }
