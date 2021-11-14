@@ -5,23 +5,47 @@ GET http://localhost:8080/
 
 GET http://localhost:8080/albums/
 
+###
 
-# ###
-# POST http://localhost:8080/
-# Content-Type: application/json
+GET http://localhost:8080/albums/10
 
-# {
-#     "title": "The Two Towers",
-#     "authors": [
-#         {
-#             "id": 1,
-#             "name": "Ayn Rand",
-#             "bio": "Would be terrible"
-#         }
-#     ],
-#     "description": "Also Really Book",
-#     "available": true
-# }
 
-# ###
-# GET http://localhost:8080/campuses/
+###
+POST http://localhost:8080/albums/
+Content-Type: application/json
+
+{
+    "name": "A NEW ALBUM",
+    "description": "DESCRIPTION OF NEW ALBUM",
+    "songs": []
+}
+
+
+###
+PATCH  http://localhost:8080/albums/1
+Content-Type: application/json
+
+{
+    "name": "Sample Name",
+    "artist": "sample artist",
+    "albums": [
+        {
+            "id": 1,
+            "name": "album name",
+            "description": "album description"
+        }
+    ]
+}
+
+###
+
+DELETE http://localhost:8080/albums/1
+
+###
+GET http://localhost:8080/songs/
+
+###
+GET http://localhost:8080/songs/13
+
+###
+DELETE http://localhost:8080/songs/13

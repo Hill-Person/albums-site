@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-//import javax.persistence.*;
 
 @Entity
 public class Song {
@@ -44,5 +43,9 @@ public class Song {
 
     public Album getAlbums() {
         return albums;
+    }
+
+    public void addAlbum(Album album){
+        albums = album;
     }
 }

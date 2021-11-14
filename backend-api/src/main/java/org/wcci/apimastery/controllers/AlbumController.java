@@ -6,6 +6,8 @@ import org.wcci.apimastery.model.Song;
 import org.wcci.apimastery.repositories.AlbumRepository;
 import org.wcci.apimastery.repositories.SongRepository;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/albums")
 public class AlbumController {
@@ -29,18 +31,25 @@ public class AlbumController {
     }
 
     @PostMapping("/")
-    public Iterable<Album> addAlbum(@RequestBody Album addAlbum){
-        albumRepo.save(addAlbum);
+    public Iterable<Album> addAlbum (@RequestBody Album albumToAdd) {
+        albumRepo.save(albumToAdd);
         return albumRepo.findAll();
     }
 
-//    @PostMapping("/")
-//    public Album addSong(@RequestBody Song addSong, @PathVariable long id) {
-//
-//        songRepo.save(addSong);
-//        return albumRepo.findById(id).get();
-//    }
+    @PatchMapping("/{id}")
+    public Iterable<Song> addSong(@RequestBody Song songToAdd, @PathVariable Long id) {
+        Optional<Album> currentAlbum = albumRepo.findById(id);
+        songToAdd.addAlbum(currentAlbum.get());
 
+        songRepo.save(songToAdd);
+        albumRepo.save(currentAlbum.get());
+        return songRepo.findAll();
+    }
 
+    @DeleteMapping("/{id}")
+    public Iterable<Album> deleteAlbum(@PathVariable Long id) {
+        albumRepo.deleteById(id);
+        return albumRepo.findAll();
+    }
 
 }
