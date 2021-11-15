@@ -15,22 +15,22 @@ POST http://localhost:8080/albums/
 Content-Type: application/json
 
 {
-    "name": "A NEW ALBUM",
+    "name": "A NfdsdfdsfdsEW ALBUM",
     "description": "DESCRIPTION OF NEW ALBUM",
     "songs": []
 }
 
 
 ###
-PATCH  http://localhost:8080/albums/1
+PATCH  http://localhost:8080/albums/100
 Content-Type: application/json
 
 {
-    "name": "Sample Name",
-    "artist": "sample artist",
+    "name": "ssssssssamsple Name",
+    "artist": "dsdsadassample artist",
     "albums": [
         {
-            "id": 1,
+            "id": 100,
             "name": "album name",
             "description": "album description"
         }
@@ -39,7 +39,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/albums/1
+DELETE http://localhost:8080/albums/23
 
 ###
 GET http://localhost:8080/songs/

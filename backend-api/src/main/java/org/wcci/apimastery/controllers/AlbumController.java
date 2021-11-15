@@ -39,10 +39,13 @@ public class AlbumController {
     @PatchMapping("/{id}")
     public Iterable<Song> addSong(@RequestBody Song songToAdd, @PathVariable Long id) {
         Optional<Album> currentAlbum = albumRepo.findById(id);
-        songToAdd.addAlbum(currentAlbum.get());
 
-        songRepo.save(songToAdd);
-        albumRepo.save(currentAlbum.get());
+            if(currentAlbum.isPresent()) {
+            songToAdd.addAlbum(currentAlbum.get());
+            songRepo.save(songToAdd);
+            albumRepo.save(currentAlbum.get());
+            }
+
         return songRepo.findAll();
     }
 
@@ -51,5 +54,4 @@ public class AlbumController {
         albumRepo.deleteById(id);
         return albumRepo.findAll();
     }
-
 }
