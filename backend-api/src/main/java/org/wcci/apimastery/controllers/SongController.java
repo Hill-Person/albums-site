@@ -28,6 +28,15 @@ public class SongController {
         return songRepo.findById(id).get();
     }
 
+
+    @PatchMapping("/{id}")
+    public Song addComment(@PathVariable Long id, @RequestBody String userComment) {
+        Song currentSong = songRepo.findById(id).get();
+        currentSong.addComment(userComment);
+        songRepo.save(currentSong);
+        return currentSong;
+    }
+
     @DeleteMapping("/{id}")
     public Iterable<Song> deleteSong(@PathVariable Long id) {
         songRepo.deleteById(id);

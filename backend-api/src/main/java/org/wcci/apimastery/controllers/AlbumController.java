@@ -54,4 +54,5 @@ public class AlbumController {
         albumRepo.deleteById(id);
         return albumRepo.findAll();
     }
+
 }
