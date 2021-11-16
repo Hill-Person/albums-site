@@ -70,5 +70,60 @@ public class Populator implements CommandLineRunner {
         Song shaggs12 = new Song("We Have A Savior", "The Shaggs", album2);
         songRepo.save(shaggs12);
 
+        Album album3 = new Album("198XAD", "Electronic music", "Mega Drive", " ");
+        albumRepo.save(album3);
+
+        Song megadrive1 = new Song("Infiltrate", "Mega Drive", album3);
+        songRepo.save(megadrive1);
+        Song megadrive2 = new Song("Acid Spit", "Mega Drive", album3);
+        songRepo.save(megadrive2);
+        Song megadrive3 = new Song("NARC", "Mega Drive", album3);
+        songRepo.save(megadrive3);
+        Song megadrive4 = new Song("Memory Dealer", "Mega Drive", album3);
+        songRepo.save(megadrive4);
+        Song megadrive5 = new Song("Osaka Sewers", "Mega Drive", album3);
+        songRepo.save(megadrive5);
+        Song megadrive6 = new Song("Exoskeleton", "Mega Drive", album3);
+        songRepo.save(megadrive6);
+        Song megadrive7 = new Song("Murderlize 'em", "Mega drive", album3);
+        songRepo.save(megadrive7);
+        Song megadrive8 = new Song("Haunted(Hunted)", "Mega Drive", album3);
+        songRepo.save(megadrive8);
+        Song megadrive9 = new Song("Edge of Reality", "Mega Drive", album3);
+        songRepo.save(megadrive9);
+        Song megadrive10 = new Song("Video Stalker", "Mega Drive", album3);
+        songRepo.save(megadrive10);
+        Song megadrive11 = new Song("The Reducer", "Mega Drive", album3);
+        songRepo.save(megadrive11);
+        Song megadrive12 = new Song("Slum Lord", "Mega Drive", album3);
+        songRepo.save(megadrive12);
+        Song megadrive13 = new Song("Zero Point Non-Response", "Mega Drive", album3);
+        songRepo.save(megadrive13);
+        Song megadrive14 = new Song("Only One", "Mega Drive", album3);
+        songRepo.save(megadrive14);
+
+        Album album4 = new Album("Zuma", "Classic Rock", "Neil Young", " ");
+        albumRepo.save(album4);
+
+        Song neilyoung1 = new Song("Don't Cry No Tears", "Neil Young", album4);
+        songRepo.save(neilyoung1);
+        Song neilyoung2 = new Song("Danger Bird", "Neil Young", album4);
+        songRepo.save(neilyoung2);
+        Song neilyoung3 = new Song("Pardon My Heart", "Neil Young", album4);
+        songRepo.save(neilyoung3);
+        Song neilyoung4 = new Song("Lookin' For Love", "Neil Young", album3);
+        songRepo.save(neilyoung4);
+        Song neilyoung5 = new Song("Osaka Sewers", "Neil Young", album4);
+        songRepo.save(neilyoung5);
+        Song neilyoung6 = new Song("Exoskeleton", "Neil Young", album4);
+        songRepo.save(neilyoung6);
+        Song neilyoung7 = new Song("Murderlize 'em", "Neil Young", album4);
+        songRepo.save(neilyoung7);
+        Song neilyoung8 = new Song("Haunted(Hunted)", "Neil Young", album4);
+        songRepo.save(neilyoung8);
+        Song neilyoung9 = new Song("Edge of Reality", "Neil Young", album4);
+        songRepo.save(neilyoung9);
+
+
     }
 }

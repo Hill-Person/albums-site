@@ -1,13 +1,47 @@
 
 
-function displayAlbumView(containerElem, album) {
-    const albumCollectionElem = document.createElement("section")
-    albumCollectionElem.classList("")
+function displayAlbumView(containerEl, album){
 
-    const albumSongsElem = document.createElement("section");
-    
+
+    const h1El = document.createElement("h1");
+    h1El.classList.add("title");
+
+   const sectionEl = document.createElement("section");
+   sectionEl.classList.add("album-view");
+
+   const artistNameHeaderEl = document.createElement("h2");
+   artistNameHeaderEl.classList.add("artist-name");
+
+   const albumTitleEl = document.createElement("h3");
+   albumTitleEl.classList.add("album-title");
+
+   const albumListEl = document.createElement("ul");
+   albumListEl.classList.add("track-list");
+   h1El.innerHTML = "test test test"
+   
+    h1El.appendChild(sectionEl);
+    sectionEl.appendChild(albumTitleEl);
+    albumTitleEl.appendChild(albumListEl);
+    albumListEl.appendChild(containerEl);
+
+    // albumListEl.appendChild()
+
 }
 
+export{displayAlbumView};
+
+// function displayAlbumView(containerElem, album) {
+//     const albumCollectionElem = document.createElement("section");
+//     albumCollectionElem.classList.add("album-view");
+
+//     const albumInfoElem = document.createElement("section");
+//     albumInfoElem.classList.add("album-info");
+
+
+//     const h2
+    
+    
+// }
 
 
 
@@ -20,7 +54,7 @@ function displayAlbumView(containerElem, album) {
 //     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 //     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 //     <title>Album</title>
-//     <link rel="stylesheet" href="/frontend/css/style.css">
+//     <link rel="stylesheet" href="/css/style.css">
 //     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 // </head>
 
@@ -44,9 +78,10 @@ function displayAlbumView(containerElem, album) {
 // <div class="single-album-info-container">
 
 //     <div class="album-view-info-container">
+//       <section class="album-view">
 //         <h2 class="artist-name">Black Sabbath</h2>
-//         <h2 class="album-title">Paranoid</h2>
-//         <img class="album-image" img src="/frontend/images/blacksabbath.jpg">
+//         <h3 class="album-title">Paranoid</h2>
+//         <img class="album-image" img src="/images/blacksabbath.jpg">
 //             <div class="stars">
 //                 <span class="fa fa-star checked"></span>
 //                 <span class="fa fa-star checked"></span>
@@ -68,8 +103,10 @@ function displayAlbumView(containerElem, album) {
 //             <li class="list">7. Rat Salad</li>
 //             <li class="list">8. Fairies Wear Boots</li>
 //         </ul>
-
+//       </section>
 //     </div>
+
+//     <!-- comment box goes here -->
 
 // </div>
 
