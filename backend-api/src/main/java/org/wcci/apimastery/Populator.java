@@ -20,7 +20,7 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Album album1 = new Album("Paranoid", "The Plymouth Rock of heavy rock.");
+        Album album1 = new Album("Paranoid", "The Plymouth Rock of heavy rock.", "Black Sabbath");
         albumRepo.save(album1);
 
         Song paranoid1 = new Song("War Pigs", "Black Sabbath", album1);
@@ -40,7 +40,7 @@ public class Populator implements CommandLineRunner {
         Song paranoid8 = new Song("Fairies Wear Boots", "Black Sabbath", album1);
         songRepo.save(paranoid8);
 
-        Album album2 = new Album("Philosophy Of The World", "The Better Beatles.");
+        Album album2 = new Album("Philosophy Of The World", "The Better Beatles.", "The Shaggs");
         albumRepo.save(album2);
 
         Song shaggs1 = new Song("Philosophy Of The World", "The Shaggs", album2);

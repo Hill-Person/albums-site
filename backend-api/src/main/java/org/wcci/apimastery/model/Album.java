@@ -11,13 +11,16 @@ public class Album {
     private Long id;
     private String name;
     private String description;
+    private String artist;
+    private String imgUrl;
 
     @OneToMany(mappedBy = "albums" , cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
 
-    public Album(String name, String description) {
+    public Album(String name, String description, String artist) {
         this.name = name;
         this.description = description;
+        this.artist = artist;
     }
 
     protected Album(){
@@ -36,7 +39,17 @@ public class Album {
         return description;
     }
 
+    public String getArtist() {
+        return artist;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
     public Collection<Song> getSongs() {
         return songs;
     }
+
+
 }
