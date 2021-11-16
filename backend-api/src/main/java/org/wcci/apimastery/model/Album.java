@@ -17,7 +17,7 @@ public class Album {
     @OneToMany(mappedBy = "albums" , cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
 
-    public Album(String name, String description, String artist) {
+    public Album(String name, String description, String artist, String imgUrl) {
         this.name = name;
         this.description = description;
         this.artist = artist;

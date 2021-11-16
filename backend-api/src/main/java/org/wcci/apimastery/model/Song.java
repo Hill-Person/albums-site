@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Song {
@@ -19,10 +21,12 @@ public class Song {
     @JsonIgnore
     private Album albums;
 
-    public Song(String name, String artist, Album album) {
+    private Collection<String> comments;
+
+    public Song(String name, String artist, Album albums) {
         this.name = name;
         this.artist = artist;
-        this.albums = album;
+        this.albums = albums;
     }
 
     protected Song(){
@@ -47,5 +51,9 @@ public class Song {
 
     public void addAlbum(Album album){
         albums = album;
+    }
+
+    public Collection<String> getComments() {
+        return comments;
     }
 }
