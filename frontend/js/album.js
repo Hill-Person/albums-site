@@ -1,33 +1,29 @@
-import {container} from "./app.js"
+import {container} from "./app.js";
+import {albums} from "./albums.js";
+import {clearChildren} from "./app.js";
 
 function displayAlbumView(containerElem, album, songs) {
     
     const albumTitleElem = document.createElement("h2");
     albumTitleElem.classList.add("album-title");
     
-    const artistNameElem = document.createElement("h2");
+    const artistNameElem = document.createElement("h3");
     artistNameElem.classList.add("artist-name");
 
     const albumImageElem = document.createElement("img");
     albumImageElem.classList.add("album-image")
 
-    const albumSongsElem = document.createElement("ul");
-    albumSongsElem.classList.add("track-list");
-
-    const songTitleElem = document.createElement("li");
-    songTitleElem.classList.add("list");
-  
     
-    songTitleElem.appendChild("li");
-    albumSongsElem.appendChild("ul");
     albumImageElem.appendChild("img");
-    artistNameElem.appendChild("h2");
+    artistNameElem.appendChild("h3");
     albumTitleElem.appendChild("h2");
 
 
 
 
     album.songs.forEach(song => {
+        const albumSongsElem = document.createElement("ul");
+        albumSongsElem.classList.add("track-list");
         const songTitleElem = document.createElement("li");
         songTitleElem.classList.add("list");
         songTitleElem.innerText = song.title;
@@ -35,16 +31,23 @@ function displayAlbumView(containerElem, album, songs) {
 
         songTitleElem.addEventListener("click", () => {
             clearChildren(containerElem);
-            
             const albumComponent = albumComponent(album, songs);
             containerElem.innerHTML += albumComponent;
-            const aEl = document.querySelector(".back-navigation");
-            aEl.addEventListener("click", () => {
+            const aElem = document.querySelector("back-navigation");
+            aElem.addEventListener("click", () => {
                 clearChildren(containerElem);
                 displayAlbumView(containerElem, album);
             })
 
         })
+    });
+    const backElem = document.createElement("a");
+    backElem.classList.add("back-navigation");
+    backElem.innerText = "back to album listings";
+
+    backElem.addEventListener('click', () => {
+        clearChildren(containerElem);
+        displayAlbumsView(containerElem, albums);
     });
 }
 export {displayAlbumView}
