@@ -1,0 +1,51 @@
+###
+GET http://localhost:8080/
+
+###
+
+GET http://localhost:8080/albums/
+
+###
+
+GET http://localhost:8080/albums/10
+
+
+###
+POST http://localhost:8080/albums/
+Content-Type: application/json
+
+{
+    "name": "A NfdsdfdsfdsEW ALBUM",
+    "description": "DESCRIPTION OF NEW ALBUM",
+    "songs": []
+}
+
+
+###
+PATCH  http://localhost:8080/albums/100
+Content-Type: application/json
+
+{
+    "name": "ssssssssamsple Name",
+    "artist": "dsdsadassample artist",
+    "albums": [
+        {
+            "id": 100,
+            "name": "album name",
+            "description": "album description"
+        }
+    ]
+}
+
+###
+
+DELETE http://localhost:8080/albums/23
+
+###
+GET http://localhost:8080/songs/
+
+###
+GET http://localhost:8080/songs/13
+
+###
+DELETE http://localhost:8080/songs/13
