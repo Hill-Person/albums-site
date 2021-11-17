@@ -197,3 +197,14 @@ navbar a:hover, .dropdown:hover .dropbtn {
       background-color: #AB9A55;
 
   }
+
+  .main-header {
+    background-color: #AB9A55;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  .main-content {
+      display: grid;
+      grid-template-rows: 4fr 4fr;
+  }

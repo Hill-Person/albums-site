@@ -1,4 +1,4 @@
-function displaySongView(trackListEl, albumJSON)
+
 
 
 

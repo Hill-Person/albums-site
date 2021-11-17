@@ -1,48 +1,5 @@
 
 
-function displayAlbumView(containerEl, album){
-
-
-    const h1El = document.createElement("h1");
-    h1El.classList.add("title");
-
-   const sectionEl = document.createElement("section");
-   sectionEl.classList.add("album-view");
-
-   const artistNameHeaderEl = document.createElement("h2");
-   artistNameHeaderEl.classList.add("artist-name");
-
-   const albumTitleEl = document.createElement("h3");
-   albumTitleEl.classList.add("album-title");
-
-   const albumListEl = document.createElement("ul");
-   albumListEl.classList.add("track-list");
-   h1El.innerHTML = "test test test"
-   
-    h1El.appendChild(sectionEl);
-    sectionEl.appendChild(albumTitleEl);
-    albumTitleEl.appendChild(albumListEl);
-    albumListEl.appendChild(containerEl);
-
-    // albumListEl.appendChild()
-
-}
-
-export{displayAlbumView};
-
-// function displayAlbumView(containerElem, album) {
-//     const albumCollectionElem = document.createElement("section");
-//     albumCollectionElem.classList.add("album-view");
-
-//     const albumInfoElem = document.createElement("section");
-//     albumInfoElem.classList.add("album-info");
-
-
-//     const h2
-    
-    
-// }
-
 
 
 
