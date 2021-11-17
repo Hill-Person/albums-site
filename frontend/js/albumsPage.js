@@ -1,12 +1,9 @@
 import { clearChildren } from "./app.js"
-import { albumsJson } from "./albumsJson.js"
 
-function displayAlbumsView(containerEl) {
+function displayAlbumsView() {
 
-let mainElement = document.createElement("main-content")
+    let mainElement = document.createElement("main-content")
 mainElement.classList.add("main-content");
-
-// let containerEl = document.querySelector(".container");
 
 let headerEl = document.createElement("header");
 
@@ -65,15 +62,19 @@ albumsJson.forEach(album => {
     albumtitleh3el.appendChild(descriptionEl);
 
 
-    artistnameh2El.addEventListener("click", () => {
+    albumtitleh3el.addEventListener("click", () => {
         clearChildren(sectionEl)}
     );
 });
 
+
+{
+    export {
+        displayAlbumsView
+    }
+};
+
 }
-
-
-export {displayAlbumsView};
 
 
 

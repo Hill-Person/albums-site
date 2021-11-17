@@ -1,10 +1,9 @@
 import { albumsJson } from "./albumsJson.js";
 
+const containerEl = document.querySelector(".container");
 
 let mainElement = document.createElement("main-content")
 mainElement.classList.add("main-content");
-
-let containerEl = document.querySelector(".container");
 
 let headerEl = document.createElement("header");
 
@@ -45,11 +44,15 @@ albumsJson.forEach(album => {
 
     let artistnameh2El = document.createElement("h2");
     artistnameh2El.classList.add("artist-name")
-    artistnameh2El.innerText = album.name;
+    artistnameh2El.innerText = album.artist;
 
     let albumtitleh3el = document.createElement("h3");
     albumtitleh3el.classList.add("album-title");
-    albumtitleh3el.innerText = album.artist;
+    albumtitleh3el.innerText = album.name;
+
+    let albumImageEl = document.createElement("img");
+    albumImageEl.classList.add("album-image")
+    albumImageEl.innerHTML = album.imgUrl;
 
     let descriptionEl = document.createElement("p");
     descriptionEl.classList.add("album-description");
@@ -59,11 +62,12 @@ albumsJson.forEach(album => {
     albuminfoElement.appendChild(mainElement);
     mainElement.appendChild(sectionEl);
     sectionEl.appendChild(artistnameh2El);
-    artistnameh2El.appendChild(albumtitleh3el);
-    albumtitleh3el.appendChild(descriptionEl);
+    sectionEl.appendChild(albumtitleh3el);
+    sectionEl.appendChild(descriptionEl);
+    sectionEl.appendChild(albumImageEl);
 
 
-    artistnameh2El.addEventListener("click", () => {
+    albumtitleh3el.addEventListener("click", () => {
         clearChildren(sectionEl)}
     );
 });
