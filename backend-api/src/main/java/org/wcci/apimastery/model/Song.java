@@ -15,6 +15,7 @@ public class Song {
     private String artist;
     private int duration;
 
+
     @ManyToOne
     @JsonIgnore
     private Album albums;
@@ -22,11 +23,11 @@ public class Song {
     @ElementCollection
     private Collection<String> comments;
 
-    public Song(String name, String artist, Album albums, int duration) {
+    public Song(String name, String artist, Album albums, int minutes, int seconds) {
         this.name = name;
         this.artist = artist;
         this.albums = albums;
-        this.duration = duration;
+        this.duration = minutes * 60 + seconds;
     }
 
     protected Song(){
