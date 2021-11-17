@@ -1,6 +1,12 @@
-import {clearChildren} from "./app.js"
+function displayAlbumPage(album, containerEl) {
 
-function displayAlbumView() {
+    console.log("made it to album page");
+    console.log(album);
+
+
+}
+
+export { displayAlbumPage };
 
     
 
