@@ -72,7 +72,7 @@ albumsJson.forEach(album => {
         clearChildren(containerEl)
      // this needs fixed
 
-        displayAlbumPage(album, containerEl);
+        displayAlbumPage(album);
         
 
     });
