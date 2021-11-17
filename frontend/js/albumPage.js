@@ -1,18 +1,55 @@
-function displayAlbumPage(album, containerEl) {
+
+function displayAlbumPage(album) {
 
     console.log("made it to album page");
     console.log(album);
+
+    //nav bar here
+    const mainContainer = document.querySelector(".container");
+
+    const mainHeader = document.createElement("h1");
+    mainHeader.innerText = "Arnold's Dive In Drive In";
+    mainHeader.classList.add("main-header")
+
+    mainContainer.append(mainHeader);
+
+    const singleAlbum = document.createElement("div");
+    singleAlbum.classList.add("singleAlbumView");
+
+    const albumArtEl = document.createElement("img")
+    albumArtEl.classList.add("album-image");
+    albumArtEl.src = album.imgUrl;
+
+    const albumNameEl = document.createElement("h1");
+    albumNameEl.innerText = album.name;
+    albumNameEl.classList.add("album-title");
+
+    const albumDescEl = document.createElement("h2");
+    albumDescEl.innerText = album.description;
+    albumDescEl.classList.add("album-description");
+
+    const albumArtistEl = document.createElement("h2");
+    albumArtistEl.innerText = album.artist;
+    albumArtistEl.classList.add("artist-name");
+
+    const songListUL = document.createElement("ul");
+
+    album.songs.forEach(song => {
+        let eachSongLi = document.createElement("li");
+        eachSongLi.classList.add("track-list");
+        eachSongLi.innerText= song.name;
+        songListUL.append(eachSongLi);
+
+
+    });
+    
+    mainContainer.append(singleAlbum);
+    singleAlbum.append(albumArtEl, albumArtistEl, albumNameEl, albumDescEl, songListUL);
 
 
 }
 
 export { displayAlbumPage };
-
-    
-
-}
-
-export{displayAlbumView}
 
 // <!DOCTYPE html>
 // <html lang="en">
