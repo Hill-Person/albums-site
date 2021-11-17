@@ -78,6 +78,11 @@ albumsJson.forEach(album => {
     });
 });
 
+function formatDuration(durationInSeconds){
+    let minutes = Math.floor(durationInSeconds/60);
+    let seconds = durationInSeconds%60;
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+}
 // function needs fixed
 
 function clearChildren(element){

@@ -13,15 +13,17 @@ public class Album {
     private String description;
     private String artist;
     private String imgUrl;
+    private String label;
 
     @OneToMany(mappedBy = "albums" , cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
 
-    public Album(String name, String description, String artist, String imgUrl) {
+    public Album(String name, String description, String artist, String imgUrl, String label) {
         this.name = name;
         this.description = description;
         this.artist = artist;
         this.imgUrl = imgUrl;
+        this.label = label;
     }
 
     protected Album(){
@@ -46,6 +48,9 @@ public class Album {
 
     public String getImgUrl() {
         return imgUrl;
+    }
+    public String getLabel() {
+        return label;
     }
 
     public Collection<Song> getSongs() {
