@@ -1,3 +1,7 @@
+<<<<<<< HEAD:frontend/js/song.js
+=======
+
+>>>>>>> 5d2fa73bcca6aa2b0ec54b99da1017382f01240d:frontend/js/songPage.js
 
 function displaySongView(trackListEl, albumJSON)
 

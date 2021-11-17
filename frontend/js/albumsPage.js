@@ -1,36 +1,80 @@
 import { clearChildren } from "./app.js"
 
+function displayAlbumsView() {
+
+    let mainElement = document.createElement("main-content")
+mainElement.classList.add("main-content");
+
+let headerEl = document.createElement("header");
+
+const sectionEl = document.createElement("section");
+sectionEl.classList.add("album-library");
+
+let h1El = document.createElement("h1");
+h1El.classList.add("main-header");
+h1El.innerText = "Arnold's Dive In Drive In";
+
+let albuminfoElement = document.createElement("div");
+albuminfoElement.classList.add("albums-info-container");
+
+let sectionElement = document.createElement("main");
+sectionElement.classList.add("main-content");
+
+let h2El = document.createElement("h2");
+h2El.classList.add("artist-name");
+
+let h2El2 = document.createElement("h2")
+h2El2.classList.add("album-title");
+
+headerEl.appendChild(h1El);
+mainElement.appendChild(sectionEl);
+containerEl.appendChild(headerEl);
 
 
-function displayAlbumsView (mainEl, albumsJSON) {
+albumsJson.forEach(album => {
 
-    const sectionEl = document.createElement("section");
+    let albuminfoElement = document.createElement("div");
+    albuminfoElement.classList.add("albums-info-container");
+
+    let mainElement = document.createElement("main");
+    mainElement.classList.add("main-content")
+
+    let sectionEl = document.createElement("section");
     sectionEl.classList.add("album-library");
-    mainEl.appendChild(sectionEl);
 
-    albumsJSON.forEach(album => {
-        const divEl = document.createElement("div");
-        divEl.classList.add("album");
-        const albumNameElem = document.createElement("h2");
-        const albumDescriptionElem = document.createElement("p");
-        albumNameElem.innerText = album.name;
-        albumDescriptionElem.innerText = album.description;
+    let artistnameh2El = document.createElement("h2");
+    artistnameh2El.classList.add("artist-name")
+    artistnameh2El.innerText = album.name;
 
-        divEl.appendChild(albumNameElem);
-        divEl.appendChild(albumDescriptionElem);
+    let albumtitleh3el = document.createElement("h3");
+    albumtitleh3el.classList.add("album-title");
+    albumtitleh3el.innerText = album.artist;
 
-        sectionEl.appendChild(divEl);
-    
-    });
+    let descriptionEl = document.createElement("p");
+    descriptionEl.classList.add("album-description");
+    descriptionEl.innerText = album.description;
+
+    containerEl.appendChild(albuminfoElement);
+    albuminfoElement.appendChild(mainElement);
+    mainElement.appendChild(sectionEl);
+    sectionEl.appendChild(artistnameh2El);
+    artistnameh2El.appendChild(albumtitleh3el);
+    albumtitleh3el.appendChild(descriptionEl);
 
 
-}
+    albumtitleh3el.addEventListener("click", () => {
+        clearChildren(sectionEl)}
+    );
+});
+
 
 {
     export {
         displayAlbumsView
     }
 };
+
+}
 
 
 

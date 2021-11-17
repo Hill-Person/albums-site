@@ -2,6 +2,7 @@ import { container } from "./app.js";
 import { albums } from "./albums.js";
 import { clearChildren } from "./app.js";
 
+<<<<<<< HEAD:frontend/js/album.js
 function displayAlbumView(containerEl, album) {
 
 
@@ -45,6 +46,8 @@ export { displayAlbumView }
 
 
 // }
+=======
+>>>>>>> 5d2fa73bcca6aa2b0ec54b99da1017382f01240d:frontend/js/albumPage.js
 
 
 

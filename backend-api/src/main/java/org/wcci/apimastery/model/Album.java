@@ -22,7 +22,11 @@ public class Album {
         this.name = name;
         this.description = description;
         this.artist = artist;
+<<<<<<< HEAD
         this.label = label;
+=======
+        this.imgUrl = imgUrl;
+>>>>>>> 5d2fa73bcca6aa2b0ec54b99da1017382f01240d
     }
 
     protected Album(){

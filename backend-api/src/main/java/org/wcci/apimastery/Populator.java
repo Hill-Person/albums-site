@@ -22,7 +22,11 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+<<<<<<< HEAD
         Album album1 = new Album("Paranoid", "The Plymouth Rock of heavy rock.", "Black Sabbath", " ", "Warner Bros");
+=======
+        Album album1 = new Album("Paranoid", "The Plymouth Rock of heavy rock.", "Black Sabbath", "./frontend/images/blacksabbath.jpg");
+>>>>>>> 5d2fa73bcca6aa2b0ec54b99da1017382f01240d
         albumRepo.save(album1);
 
         Song paranoid1 = new Song("War Pigs", "Black Sabbath", album1);
@@ -42,7 +46,11 @@ public class Populator implements CommandLineRunner {
         Song paranoid8 = new Song("Fairies Wear Boots", "Black Sabbath", album1);
         songRepo.save(paranoid8);
 
+<<<<<<< HEAD
         Album album2 = new Album("Philosophy Of The World", "The Better Beatles.", "The Shaggs", " ", "Third World");
+=======
+        Album album2 = new Album("Philosophy Of The World", "The Better Beatles.", "The Shaggs", "./frontend/images/shaggs.jpg");
+>>>>>>> 5d2fa73bcca6aa2b0ec54b99da1017382f01240d
         albumRepo.save(album2);
 
         Song shaggs1 = new Song("Philosophy Of The World", "The Shaggs", album2);
@@ -70,7 +78,11 @@ public class Populator implements CommandLineRunner {
         Song shaggs12 = new Song("We Have A Savior", "The Shaggs", album2);
         songRepo.save(shaggs12);
 
+<<<<<<< HEAD
         Album album3 = new Album("198XAD", "Electronic music", "Mega Drive", " ", "FiXT Neon");
+=======
+        Album album3 = new Album("198XAD", "Electronic music", "Mega Drive", "./frontend/frontend/images/megadrive.jpg");
+>>>>>>> 5d2fa73bcca6aa2b0ec54b99da1017382f01240d
         albumRepo.save(album3);
 
         Song megadrive1 = new Song("Infiltrate", "Mega Drive", album3);
@@ -102,7 +114,11 @@ public class Populator implements CommandLineRunner {
         Song megadrive14 = new Song("Only One", "Mega Drive", album3);
         songRepo.save(megadrive14);
 
+<<<<<<< HEAD
         Album album4 = new Album("Zuma", "Classic Rock", "Neil Young", " ", "Reprise");
+=======
+        Album album4 = new Album("Zuma", "Classic Rock", "Neil Young", "./frontend/images/zuma.jpg");
+>>>>>>> 5d2fa73bcca6aa2b0ec54b99da1017382f01240d
         albumRepo.save(album4);
 
         Song neilyoung1 = new Song("Don't Cry No Tears", "Neil Young", album4);
