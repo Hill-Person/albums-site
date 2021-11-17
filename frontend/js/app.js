@@ -1,4 +1,5 @@
 import { albumsJson } from "./albumsJson.js";
+import { displayAlbumPage } from "./albumPage.js";
 
 const containerEl = document.querySelector(".container");
 
@@ -52,7 +53,7 @@ albumsJson.forEach(album => {
 
     let albumImageEl = document.createElement("img");
     albumImageEl.classList.add("album-image")
-    albumImageEl.innerHTML = album.imgUrl;
+    albumImageEl.src = album.imgUrl;
 
     let descriptionEl = document.createElement("p");
     descriptionEl.classList.add("album-description");
@@ -68,8 +69,13 @@ albumsJson.forEach(album => {
 
 
     albumtitleh3el.addEventListener("click", () => {
-        clearChildren(sectionEl)} // this needs fixed
-    );
+        clearChildren(containerEl)
+     // this needs fixed
+
+        displayAlbumPage(album, containerEl);
+        
+
+    });
 });
 
 // function needs fixed

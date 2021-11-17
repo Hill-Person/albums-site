@@ -1,4 +1,12 @@
+function displayAlbumPage(album, containerEl) {
 
+    console.log("made it to album page");
+    console.log(album);
+
+
+}
+
+export { displayAlbumPage };
 
 
 
