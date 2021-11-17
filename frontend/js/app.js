@@ -1,6 +1,8 @@
 import { albumsJson } from "./albumsJson.js";
 import { displayAlbumPage } from "./albumPage.js";
 
+function displayHomePage() {
+
 const containerEl = document.querySelector(".container");
 
 let mainElement = document.createElement("main-content")
@@ -78,6 +80,8 @@ albumsJson.forEach(album => {
     });
 });
 
+}
+
 function formatDuration(durationInSeconds){
     let minutes = Math.floor(durationInSeconds/60);
     let seconds = durationInSeconds%60;
@@ -91,7 +95,11 @@ function clearChildren(element){
     }
 };
 
+displayHomePage();
+
+
 export { clearChildren }
+export { displayAlbumPage }
 
 /* <h1 class="main-header">Arnold's Dive In Drive In</h1>
 

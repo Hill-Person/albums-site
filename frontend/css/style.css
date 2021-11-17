@@ -156,7 +156,7 @@ navbar a:hover, .dropdown:hover .dropbtn {
     background-color: #AB9A55;
     font-size: x-large;
     justify-content: center;
-    margin-right: 10px;
+    margin: 0 auto;
  }
 
  .track-list {
@@ -165,7 +165,10 @@ navbar a:hover, .dropdown:hover .dropbtn {
     align-items: center;
     text-align: center;
     border-radius: 10px;
-
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
  }
 
  .list {
@@ -206,7 +209,7 @@ navbar a:hover, .dropdown:hover .dropbtn {
     border-radius: 10px;
   }
 
-  /* .main-content {
-      display: grid;
-      grid-template-rows: 4fr 4fr;
+  /* .ul-track-list {
+
+    margin: 0 auto;
   } */
