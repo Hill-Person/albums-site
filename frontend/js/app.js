@@ -68,9 +68,11 @@ albumsJson.forEach(album => {
 
 
     albumtitleh3el.addEventListener("click", () => {
-        clearChildren(sectionEl)}
+        clearChildren(sectionEl)} // this needs fixed
     );
 });
+
+// function needs fixed
 
 function clearChildren(element){
     while(element.firstChild){

@@ -21,6 +21,7 @@ public class Album {
         this.name = name;
         this.description = description;
         this.artist = artist;
+        this.imgUrl = imgUrl;
     }
 
     protected Album(){

@@ -193,7 +193,7 @@ navbar a:hover, .dropdown:hover .dropbtn {
       border-radius: 10px;
   }
 
-  p .album-decription {
+  .album-decription {
       background-color: #AB9A55;
       text-align: center;
       font-size: medium;
