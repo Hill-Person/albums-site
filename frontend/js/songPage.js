@@ -1,16 +1,15 @@
-import {clearChildren} from "./app.js";
+import { clearChildren } from "./app.js";
+import { albumsJson } from "./albumsJson.js";
 
 
+function displaySongPage(album, songs) {
 
-function displaySongView(songview){
-
-    const titleEl = document.querySelector(".title");
-    const trackListEl = document.querySelector(".tracklist");
-    const trackListUL = document.querySelector(".track-list");
+    console.log("made it to song page");
+    console.log(songs);
 
 }
 
-
+export { displaySongPage }
 
 
 
