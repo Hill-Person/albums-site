@@ -72,7 +72,7 @@ albumsJson.forEach(album => {
         clearChildren(containerEl)
      // this needs fixed
 
-        displayAlbumPage(album, containerEl);
+        displayAlbumPage(album);
         
 
     });
@@ -91,7 +91,7 @@ function clearChildren(element){
     }
 };
 
-
+export { clearChildren }
 
 /* <h1 class="main-header">Arnold's Dive In Drive In</h1>
 
