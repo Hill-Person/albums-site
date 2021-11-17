@@ -1,8 +1,12 @@
+import {clearChildren} from "./app.js"
+
+function displayAlbumView() {
 
 
 
+}
 
-
+export{displayAlbumView}
 
 // <!DOCTYPE html>
 // <html lang="en">

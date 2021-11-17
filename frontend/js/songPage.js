@@ -1,6 +1,14 @@
+import {clearChildren} from "./app.js";
 
 
 
+function displaySongView(songview){
+
+    const titleEl = document.querySelector(".title");
+    const trackListEl = document.querySelector(".tracklist");
+    const trackListUL = document.querySelector(".track-list");
+
+}
 
 
 

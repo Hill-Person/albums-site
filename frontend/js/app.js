@@ -1,4 +1,5 @@
 import { albumsJson } from "./albumsJson.js";
+import { displayAlbumView } from "./albumPage.js";
 
 
 let mainElement = document.createElement("main-content")
@@ -59,14 +60,24 @@ albumsJson.forEach(album => {
     albuminfoElement.appendChild(mainElement);
     mainElement.appendChild(sectionEl);
     sectionEl.appendChild(artistnameh2El);
-    artistnameh2El.appendChild(albumtitleh3el);
-    albumtitleh3el.appendChild(descriptionEl);
+    sectionEl.appendChild(albumtitleh3el);
+    sectionEl.appendChild(descriptionEl);
+    sectionEl.appendChild(albumImageEl);
 
 
     artistnameh2El.addEventListener("click", () => {
         clearChildren(sectionEl)}
     );
+
+    const goToAlbum = document.querySelector(".album-title");
+    goToAlbum.addEventListener("click", () => {
+            displayAlbumView();
+    });
+
 });
+
+
+
 
 function clearChildren(element){
     while(element.firstChild){
@@ -74,7 +85,7 @@ function clearChildren(element){
     }
 };
 
-
+export { clearChildren }
 
 /* <h1 class="main-header">Arnold's Dive In Drive In</h1>
 
