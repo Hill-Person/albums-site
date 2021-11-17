@@ -294,14 +294,14 @@ const albumsJson =
         }
       ]
     },
-    {
-      "id": 48,
-      "name": "A NfdsdfdsfdsEW ALBUM",
-      "description": "DESCRIPTION OF NEW ALBUM",
-      "artist": null,
-      "imgUrl": null,
-      "songs": []
-    }
+    // {
+    //   "id": 48,
+    //   "name": "A NfdsdfdsfdsEW ALBUM",
+    //   "description": "DESCRIPTION OF NEW ALBUM",
+    //   "artist": null,
+    //   "imgUrl": null,
+    //   "songs": []
+    // }
   ]
 
   export {albumsJson};
