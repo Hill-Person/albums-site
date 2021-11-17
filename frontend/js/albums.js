@@ -23,7 +23,6 @@ function displayAlbumsView (mainEl, albumsJSON) {
     
     });
 
-
 }
 
 {
