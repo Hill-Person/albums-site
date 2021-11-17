@@ -1,12 +1,25 @@
 import { albumsJson } from "./albumsJson.js";
 
+
+let mainElement = document.createElement("main-content")
+mainElement.classList.add("main-content");
+
 let containerEl = document.querySelector(".container");
-let mainElement = document.createElement("main-content");
+
 let headerEl = document.createElement("header");
+
+const sectionEl = document.createElement("section");
+sectionEl.classList.add("album-library");
 
 let h1El = document.createElement("h1");
 h1El.classList.add("main-header");
 h1El.innerText = "Arnold's Dive In Drive In";
+
+let albuminfoElement = document.createElement("div");
+albuminfoElement.classList.add("albums-info-container");
+
+let sectionElement = document.createElement("main");
+sectionElement.classList.add("main-content");
 
 let h2El = document.createElement("h2");
 h2El.classList.add("artist-name");
@@ -15,42 +28,53 @@ let h2El2 = document.createElement("h2")
 h2El2.classList.add("album-title");
 
 headerEl.appendChild(h1El);
-// mainElement.appendChild(sectionEl);
-containerEl.append(headerEl);
-containerEl.appendChild(mainElement);
+mainElement.appendChild(sectionEl);
+containerEl.appendChild(headerEl);
+
 
 albumsJson.forEach(album => {
 
-    const sectionEl = document.createElement("section");
+    let albuminfoElement = document.createElement("div");
+    albuminfoElement.classList.add("albums-info-container");
+
+    let mainElement = document.createElement("main");
+    mainElement.classList.add("main-content")
+
+    let sectionEl = document.createElement("section");
     sectionEl.classList.add("album-library");
 
-    const artistnameh2El = document.createElement("h2");
+    let artistnameh2El = document.createElement("h2");
+    artistnameh2El.classList.add("artist-name")
     artistnameh2El.innerText = album.name;
 
-    const albumtitleh3el = document.createElement("h3");
+    let albumtitleh3el = document.createElement("h3");
+    albumtitleh3el.classList.add("album-title");
     albumtitleh3el.innerText = album.artist;
 
-    const descriptionEl = document.createElement("p");
+    let descriptionEl = document.createElement("p");
+    descriptionEl.classList.add("album-description");
     descriptionEl.innerText = album.description;
 
-
-
-    sectionEl.appendChild(artistnameh2El);
-    sectionEl.appendChild(albumtitleh3el);
-    sectionEl.appendChild(descriptionEl);
+    containerEl.appendChild(albuminfoElement);
+    albuminfoElement.appendChild(mainElement);
     mainElement.appendChild(sectionEl);
-    
+    sectionEl.appendChild(artistnameh2El);
+    artistnameh2El.appendChild(albumtitleh3el);
+    albumtitleh3el.appendChild(descriptionEl);
+
+
+    artistnameh2El.addEventListener("click", () => {
+        clearChildren(sectionEl)}
+    );
 });
 
+function clearChildren(element){
+    while(element.firstChild){
+        element.removeChild(element.lastChild);
+    }
+};
 
-// function clearChildren(element) {
-//     while (element.firstchild) {
-//         element.removeChild(element.lastChild);
-//     }
-// }
 
-
-// export { clearChildren };
 
 /* <h1 class="main-header">Arnold's Dive In Drive In</h1>
 
