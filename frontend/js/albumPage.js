@@ -2,7 +2,7 @@ import {clearChildren} from "./app.js"
 
 function displayAlbumView() {
 
-
+    
 
 }
 

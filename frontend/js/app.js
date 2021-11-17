@@ -62,7 +62,7 @@ albumsJson.forEach(album => {
     sectionEl.appendChild(artistnameh2El);
     sectionEl.appendChild(albumtitleh3el);
     sectionEl.appendChild(descriptionEl);
-    sectionEl.appendChild(albumImageEl);
+    // sectionEl.appendChild(albumImageEl);
 
 
     artistnameh2El.addEventListener("click", () => {
@@ -72,11 +72,10 @@ albumsJson.forEach(album => {
     const goToAlbum = document.querySelector(".album-title");
     goToAlbum.addEventListener("click", () => {
             displayAlbumView();
+            console.log("reached");
     });
 
 });
-
-
 
 
 function clearChildren(element){
