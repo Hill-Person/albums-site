@@ -2,10 +2,7 @@ package org.wcci.apimastery.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 
@@ -21,6 +18,7 @@ public class Song {
     @JsonIgnore
     private Album albums;
 
+    @ElementCollection
     private Collection<String> comments;
 
     public Song(String name, String artist, Album albums) {
@@ -56,4 +54,9 @@ public class Song {
     public Collection<String> getComments() {
         return comments;
     }
+
+    public void addComment(String comment) {
+        comments.add(comment);
+    }
+
 }

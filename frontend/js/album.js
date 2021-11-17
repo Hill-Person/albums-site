@@ -10,6 +10,7 @@ function displayAlbumView(containerElem, album, songs) {
     const artistNameElem = document.createElement("h3");
     artistNameElem.classList.add("artist-name");
 
+<<<<<<< HEAD
     const albumImageElem = document.createElement("img");
     albumImageElem.classList.add("album-image")
 
@@ -49,11 +50,53 @@ function displayAlbumView(containerElem, album, songs) {
         clearChildren(containerElem);
         displayAlbumsView(containerElem, albums);
     });
+=======
+function displayAlbumView(containerEl, album){
+
+
+    const h1El = document.createElement("h1");
+    h1El.classList.add("title");
+
+   const sectionEl = document.createElement("section");
+   sectionEl.classList.add("album-view");
+
+   const artistNameHeaderEl = document.createElement("h2");
+   artistNameHeaderEl.classList.add("artist-name");
+
+   const albumTitleEl = document.createElement("h3");
+   albumTitleEl.classList.add("album-title");
+
+   const albumListEl = document.createElement("ul");
+   albumListEl.classList.add("track-list");
+   h1El.innerHTML = "test test test"
+   
+    h1El.appendChild(sectionEl);
+    sectionEl.appendChild(albumTitleEl);
+    albumTitleEl.appendChild(albumListEl);
+    albumListEl.appendChild(containerEl);
+
+    // albumListEl.appendChild()
+
+>>>>>>> 0932a8fad045db8c37e691a9d0ca005ab4ce29f4
 }
 export {displayAlbumView}
 
 
 
+export{displayAlbumView};
+
+// function displayAlbumView(containerElem, album) {
+//     const albumCollectionElem = document.createElement("section");
+//     albumCollectionElem.classList.add("album-view");
+
+//     const albumInfoElem = document.createElement("section");
+//     albumInfoElem.classList.add("album-info");
+
+
+//     const h2
+    
+    
+// }
 
 
 
@@ -66,7 +109,7 @@ export {displayAlbumView}
 //     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 //     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 //     <title>Album</title>
-//     <link rel="stylesheet" href="/frontend/css/style.css">
+//     <link rel="stylesheet" href="/css/style.css">
 //     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 // </head>
 
@@ -90,9 +133,10 @@ export {displayAlbumView}
 // <div class="single-album-info-container">
 
 //     <div class="album-view-info-container">
+//       <section class="album-view">
 //         <h2 class="artist-name">Black Sabbath</h2>
-//         <h2 class="album-title">Paranoid</h2>
-//         <img class="album-image" img src="/frontend/images/blacksabbath.jpg">
+//         <h3 class="album-title">Paranoid</h2>
+//         <img class="album-image" img src="/images/blacksabbath.jpg">
 //             <div class="stars">
 //                 <span class="fa fa-star checked"></span>
 //                 <span class="fa fa-star checked"></span>
@@ -114,8 +158,10 @@ export {displayAlbumView}
 //             <li class="list">7. Rat Salad</li>
 //             <li class="list">8. Fairies Wear Boots</li>
 //         </ul>
-
+//       </section>
 //     </div>
+
+//     <!-- comment box goes here -->
 
 // </div>
 

@@ -1,4 +1,36 @@
+import { clearChildren } from "./app.js"
 
+
+
+function displayAlbumsView (mainEl, albumsJSON) {
+
+    const sectionEl = document.createElement("section");
+    sectionEl.classList.add("album-library");
+    mainEl.appendChild(sectionEl);
+
+    albumsJSON.forEach(album => {
+        const divEl = document.createElement("div");
+        divEl.classList.add("album");
+        const albumNameElem = document.createElement("h2");
+        const albumDescriptionElem = document.createElement("p");
+        albumNameElem.innerText = album.name;
+        albumDescriptionElem.innerText = album.description;
+
+        divEl.appendChild(albumNameElem);
+        divEl.appendChild(albumDescriptionElem);
+
+        sectionEl.appendChild(divEl);
+    
+    });
+
+
+}
+
+{
+    export {
+        displayAlbumsView
+    }
+};
 
 
 

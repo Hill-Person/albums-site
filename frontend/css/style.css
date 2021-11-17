@@ -190,4 +190,10 @@ navbar a:hover, .dropdown:hover .dropbtn {
       background-color: #AB9A55;
       padding-top: 10px;
       font-size: 40px;
+      border-radius: 10px;
+  }
+
+  .album-decription {
+      background-color: #AB9A55;
+
   }

@@ -120,6 +120,7 @@ const albumsJson =
     },
     {
       "id": 23,
+<<<<<<< HEAD
       "name": "198XAD",
       "description": "Electronic music",
       "artist": "Mega Drive",
@@ -263,3 +264,22 @@ const albumsJson =
 
 
   
+=======
+      "name": "A NfdsdfdsfdsEW ALBUM",
+      "description": "DESCRIPTION OF NEW ALBUM",
+      "artist": null,
+      "imgUrl": null,
+      "songs": []
+    },
+    {
+      "id": 24,
+      "name": "A NfdsdfdsfdsEW ALBUM",
+      "description": "DESCRIPTION OF NEW ALBUM",
+      "artist": null,
+      "imgUrl": null,
+      "songs": []
+    }
+  ]
+
+  export {albumsJson};
+>>>>>>> 0932a8fad045db8c37e691a9d0ca005ab4ce29f4
