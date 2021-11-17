@@ -1,75 +1,26 @@
-import {container} from "./app.js";
-import {albums} from "./albums.js";
-import {clearChildren} from "./app.js";
+import { container } from "./app.js";
+import { albums } from "./albums.js";
+import { clearChildren } from "./app.js";
 
-function displayAlbumView(containerElem, album, songs) {
-    
-    const albumTitleElem = document.createElement("h2");
-    albumTitleElem.classList.add("album-title");
-    
-    const artistNameElem = document.createElement("h3");
-    artistNameElem.classList.add("artist-name");
-
-<<<<<<< HEAD
-    const albumImageElem = document.createElement("img");
-    albumImageElem.classList.add("album-image")
-
-    
-    albumImageElem.appendChild("img");
-    artistNameElem.appendChild("h3");
-    albumTitleElem.appendChild("h2");
-
-
-
-
-    album.songs.forEach(song => {
-        const albumSongsElem = document.createElement("ul");
-        albumSongsElem.classList.add("track-list");
-        const songTitleElem = document.createElement("li");
-        songTitleElem.classList.add("list");
-        songTitleElem.innerText = song.title;
-        albumSongsElem.appendChild(songTitleElem);
-
-        songTitleElem.addEventListener("click", () => {
-            clearChildren(containerElem);
-            const albumComponent = albumComponent(album, songs);
-            containerElem.innerHTML += albumComponent;
-            const aElem = document.querySelector("back-navigation");
-            aElem.addEventListener("click", () => {
-                clearChildren(containerElem);
-                displayAlbumView(containerElem, album);
-            })
-
-        })
-    });
-    const backElem = document.createElement("a");
-    backElem.classList.add("back-navigation");
-    backElem.innerText = "back to album listings";
-
-    backElem.addEventListener('click', () => {
-        clearChildren(containerElem);
-        displayAlbumsView(containerElem, albums);
-    });
-=======
-function displayAlbumView(containerEl, album){
+function displayAlbumView(containerEl, album) {
 
 
     const h1El = document.createElement("h1");
     h1El.classList.add("title");
 
-   const sectionEl = document.createElement("section");
-   sectionEl.classList.add("album-view");
+    const sectionEl = document.createElement("section");
+    sectionEl.classList.add("album-view");
 
-   const artistNameHeaderEl = document.createElement("h2");
-   artistNameHeaderEl.classList.add("artist-name");
+    const artistNameHeaderEl = document.createElement("h2");
+    artistNameHeaderEl.classList.add("artist-name");
 
-   const albumTitleEl = document.createElement("h3");
-   albumTitleEl.classList.add("album-title");
+    const albumTitleEl = document.createElement("h3");
+    albumTitleEl.classList.add("album-title");
 
-   const albumListEl = document.createElement("ul");
-   albumListEl.classList.add("track-list");
-   h1El.innerHTML = "test test test"
-   
+    const albumListEl = document.createElement("ul");
+    albumListEl.classList.add("track-list");
+    h1El.innerHTML = "test test test"
+
     h1El.appendChild(sectionEl);
     sectionEl.appendChild(albumTitleEl);
     albumTitleEl.appendChild(albumListEl);
@@ -77,13 +28,10 @@ function displayAlbumView(containerEl, album){
 
     // albumListEl.appendChild()
 
->>>>>>> 0932a8fad045db8c37e691a9d0ca005ab4ce29f4
 }
-export {displayAlbumView}
+export { displayAlbumView }
 
 
-
-export{displayAlbumView};
 
 // function displayAlbumView(containerElem, album) {
 //     const albumCollectionElem = document.createElement("section");
@@ -94,8 +42,8 @@ export{displayAlbumView};
 
 
 //     const h2
-    
-    
+
+
 // }
 
 
@@ -165,6 +113,6 @@ export{displayAlbumView};
 
 // </div>
 
-    
+
 // </body>
 // </html>

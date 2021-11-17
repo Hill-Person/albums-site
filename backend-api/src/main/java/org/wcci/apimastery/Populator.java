@@ -22,7 +22,7 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Album album1 = new Album("Paranoid", "The Plymouth Rock of heavy rock.", "Black Sabbath", " ");
+        Album album1 = new Album("Paranoid", "The Plymouth Rock of heavy rock.", "Black Sabbath", " ", "Warner Bros");
         albumRepo.save(album1);
 
         Song paranoid1 = new Song("War Pigs", "Black Sabbath", album1);
@@ -42,7 +42,7 @@ public class Populator implements CommandLineRunner {
         Song paranoid8 = new Song("Fairies Wear Boots", "Black Sabbath", album1);
         songRepo.save(paranoid8);
 
-        Album album2 = new Album("Philosophy Of The World", "The Better Beatles.", "The Shaggs", " ");
+        Album album2 = new Album("Philosophy Of The World", "The Better Beatles.", "The Shaggs", " ", "Third World");
         albumRepo.save(album2);
 
         Song shaggs1 = new Song("Philosophy Of The World", "The Shaggs", album2);
@@ -70,7 +70,7 @@ public class Populator implements CommandLineRunner {
         Song shaggs12 = new Song("We Have A Savior", "The Shaggs", album2);
         songRepo.save(shaggs12);
 
-        Album album3 = new Album("198XAD", "Electronic music", "Mega Drive", " ");
+        Album album3 = new Album("198XAD", "Electronic music", "Mega Drive", " ", "FiXT Neon");
         albumRepo.save(album3);
 
         Song megadrive1 = new Song("Infiltrate", "Mega Drive", album3);
@@ -102,7 +102,7 @@ public class Populator implements CommandLineRunner {
         Song megadrive14 = new Song("Only One", "Mega Drive", album3);
         songRepo.save(megadrive14);
 
-        Album album4 = new Album("Zuma", "Classic Rock", "Neil Young", " ");
+        Album album4 = new Album("Zuma", "Classic Rock", "Neil Young", " ", "Reprise");
         albumRepo.save(album4);
 
         Song neilyoung1 = new Song("Don't Cry No Tears", "Neil Young", album4);
@@ -113,15 +113,15 @@ public class Populator implements CommandLineRunner {
         songRepo.save(neilyoung3);
         Song neilyoung4 = new Song("Lookin' For Love", "Neil Young", album3);
         songRepo.save(neilyoung4);
-        Song neilyoung5 = new Song("Osaka Sewers", "Neil Young", album4);
+        Song neilyoung5 = new Song("Barstool Blues", "Neil Young", album4);
         songRepo.save(neilyoung5);
-        Song neilyoung6 = new Song("Exoskeleton", "Neil Young", album4);
+        Song neilyoung6 = new Song("Stupid Girl", "Neil Young", album4);
         songRepo.save(neilyoung6);
-        Song neilyoung7 = new Song("Murderlize 'em", "Neil Young", album4);
+        Song neilyoung7 = new Song("Drive Back", "Neil Young", album4);
         songRepo.save(neilyoung7);
-        Song neilyoung8 = new Song("Haunted(Hunted)", "Neil Young", album4);
+        Song neilyoung8 = new Song("Cortez the Killer", "Neil Young", album4);
         songRepo.save(neilyoung8);
-        Song neilyoung9 = new Song("Edge of Reality", "Neil Young", album4);
+        Song neilyoung9 = new Song("Through My Sails", "Neil Young", album4);
         songRepo.save(neilyoung9);
 
 

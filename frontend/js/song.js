@@ -1,5 +1,5 @@
-function displaySongView(trackListEl, albumJSON)
 
+function displaySongView(trackListEl, albumJSON)
 
 
 

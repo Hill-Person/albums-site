@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-const containerElem = document.querySelector(".albums-info-container");
-=======
 import { albumsJson } from "./albumsJson.js";
 
 let containerEl = document.querySelector(".container");
@@ -44,6 +41,8 @@ albumsJson.forEach(album => {
     mainElement.appendChild(sectionEl);
     
 });
+
+    
 
 
 // function clearChildren(element) {
@@ -142,4 +141,3 @@ albumsJson.forEach(album => {
 
     </main>
 </div> */
->>>>>>> 0932a8fad045db8c37e691a9d0ca005ab4ce29f4
