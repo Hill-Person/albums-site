@@ -30,6 +30,7 @@ function displaySongPage(album) {
         singleSongLI.classList.add("single-song");
         singleSongLI.innerText = song.name;
         singleSongListUL.appendChild(singleSongLI);
+        // singleSongListUL.appendChild(mainContainer);
         
     });
 

@@ -14,6 +14,7 @@ public class Song {
     private String name;
     private String artist;
     private int duration;
+    private String songRating;
 
 
     @ManyToOne
@@ -23,11 +24,12 @@ public class Song {
     @ElementCollection
     private Collection<String> comments;
 
-    public Song(String name, String artist, Album albums, int minutes, int seconds) {
+    public Song(String name, String artist, Album albums, int minutes, int seconds, String songRating) {
         this.name = name;
         this.artist = artist;
         this.albums = albums;
         this.duration = minutes * 60 + seconds;
+        this.songRating = songRating;
     }
 
     protected Song(){
@@ -66,4 +68,7 @@ public class Song {
         comments.add(comment);
     }
 
+    public String getSongRating() {
+        return songRating;
+    }
 }
