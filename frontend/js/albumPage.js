@@ -5,7 +5,7 @@ import { displaySongPage } from "./songPage.js"
 function displayAlbumPage(album) {
 
     console.log("made it to album page");
-    console.log(album);
+    // console.log(album);
 
     //nav bar here
     const mainContainer = document.querySelector(".container");
@@ -37,7 +37,7 @@ function displayAlbumPage(album) {
 
     const songListUL = document.createElement("ul");
     songListUL.classList.add("ul-track-list");
-
+    console.log(album);
     album.songs.forEach(song => {
         let eachSongLi = document.createElement("li");
         eachSongLi.classList.add("track-list");
@@ -47,7 +47,7 @@ function displayAlbumPage(album) {
 
        eachSongLi.addEventListener("click", () => {
             clearChildren(mainContainer);
-            displaySongPage(album.songs);
+            displaySongPage(album);
 
        });
 

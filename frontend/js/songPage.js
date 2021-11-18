@@ -2,10 +2,44 @@ import { clearChildren } from "./app.js";
 import { albumsJson } from "./albumsJson.js";
 
 
-function displaySongPage(album, songs) {
+function displaySongPage(album) {
 
-    console.log("made it to song page");
-    console.log(songs);
+    // console.log("made it to song page");
+    console.log(album.songs);
+
+    const mainContainer = document.querySelector(".container");
+
+    const mainHeader = document.createElement("h1");
+    mainHeader.innerText = "Arnold's Dive In Drive In";
+    mainHeader.classList.add("main-header");
+
+    mainContainer.append(mainHeader);
+
+    const singleSong = document.createElement("div");
+    singleSong.classList.add("single-song-div");
+
+    const singleSongListUL = document.createElement("ul");
+    singleSongListUL.classList.add("ul-track-list");
+    singleSong.appendChild(singleSongListUL);
+
+    const singleSongLI = document.createElement("li");
+    singleSongLI.classList.add("single-song");
+
+    album.songs.forEach(song => {
+        let singleSongLI = document.createElement("li");
+        singleSongLI.classList.add("single-song");
+        singleSongLI.innerText = song.name;
+        singleSongListUL.appendChild(singleSongLI);
+        
+    });
+
+    mainContainer.appendChild(singleSong);
+    singleSong.appendChild(singleSongListUL);
+    singleSongListUL.appendChild(singleSongLI);
+
+
+
+
 
 }
 
@@ -27,18 +61,6 @@ export { displaySongPage }
 //     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 // </head>
 // <body>
-//     <div class="navbar">
-//         <div class="dropdown">
-//           <button class="dropbtn">Menu
-//             <i class="fa fa-caret-down"></i>
-//           </button>
-//           <div class="dropdown-content">
-//             <a href="#" class="dropdown-content-list">Artists</a>
-//             <a href="#" class="dropdown-content-list">Albums</a>
-//             <a href="#" class="dropdown-content-list">Songs</a>
-//           </div>
-//         </div> 
-//       </div>
 
 
 //     <h1 class="title">Arnold's Dive In Drive In</h1>
