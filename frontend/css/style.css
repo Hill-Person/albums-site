@@ -203,6 +203,10 @@ navbar a:hover, .dropdown:hover .dropbtn {
     text-align: center;
     border-radius: 10px;
   }
+  label {
+    margin-left: 17px;
+    color:#FF6501;
+  }
 
   /* .ul-track-list {
 
