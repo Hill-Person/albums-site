@@ -22,7 +22,7 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Album album1 = new Album("Paranoid", "The Plymouth Rock of heavy rock.", "Black Sabbath", "./frontend/images/blacksabbath.jpg", "Warner Bros", "This rips", "10/10");
+        Album album1 = new Album("Paranoid", "The Plymouth Rock of heavy rock.", "Black Sabbath", "/images/blacksabbath.jpg", "Warner Bros", "This rips", "10/10");
         albumRepo.save(album1);
 
         Song paranoid1 = new Song("War Pigs", "Black Sabbath", album1, 7, 57, "9/10");
@@ -42,7 +42,7 @@ public class Populator implements CommandLineRunner {
         Song paranoid8 = new Song("Fairies Wear Boots", "Black Sabbath", album1, 6,15, "8/10");
         songRepo.save(paranoid8);
 
-        Album album2 = new Album("Philosophy Of The World", "The Better Beatles.", "The Shaggs", "./frontend/images/shaggs.jpg", "Third World", "What a weird band", "4/10");
+        Album album2 = new Album("Philosophy Of The World", "The Better Beatles.", "The Shaggs", "/images/shaggs.jpg", "Third World", "What a weird band", "4/10");
         albumRepo.save(album2);
 
         Song shaggs1 = new Song("Philosophy Of The World", "The Shaggs", album2, 2,56, "6/10");
@@ -70,7 +70,7 @@ public class Populator implements CommandLineRunner {
         Song shaggs12 = new Song("We Have A Savior", "The Shaggs", album2, 3,6,"3/10");
         songRepo.save(shaggs12);
 
-        Album album3 = new Album("198XAD", "Electronic music", "Mega Drive", "./frontend/frontend/images/megadrive.jpg", "FiXT", "This album is groovy", "8/10");
+        Album album3 = new Album("198XAD", "Electronic music", "Mega Drive", "/images/megadrive.jpg", "FiXT", "This album is groovy", "8/10");
         albumRepo.save(album3);
 
         Song megadrive1 = new Song("Infiltrate", "Mega Drive", album3, 1,20, "9/10");
@@ -102,7 +102,7 @@ public class Populator implements CommandLineRunner {
         Song megadrive14 = new Song("Only One", "Mega Drive", album3, 11,24, "8/10");
         songRepo.save(megadrive14);
 
-        Album album4 = new Album("Zuma", "Classic Rock", "Neil Young", "./frontend/images/zuma.jpg", "Reprise", "Neil Young sounds like Kermit the frog", "10/10");
+        Album album4 = new Album("Zuma", "Classic Rock", "Neil Young", "/images/zuma.jpg", "Reprise", "Neil Young sounds like Kermit the frog", "10/10");
         albumRepo.save(album4);
 
         Song neilyoung1 = new Song("Don't Cry No Tears", "Neil Young", album4, 2,34, "10/10");

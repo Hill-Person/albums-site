@@ -1,7 +1,15 @@
-import { albumsJson } from "./albumsJson.js";
+// import { albumsJson } from "./albumsJson.js";
 import { displayAlbumPage } from "./albumPage.js";
 
-function displayHomePage() {
+
+fetch("http://localhost:8080/albums/")
+.then(res => res.json())
+.then(albums => {
+    displayHomePage(albums)
+})
+
+
+function displayHomePage(albums) {
 
 const containerEl = document.querySelector(".container");
 
@@ -34,7 +42,10 @@ mainElement.appendChild(sectionEl);
 containerEl.appendChild(headerEl);
 
 
-albumsJson.forEach(album => {
+
+
+
+albums.forEach(album => {
 
     let albuminfoElement = document.createElement("div");
     albuminfoElement.classList.add("albums-info-container");
@@ -74,6 +85,14 @@ albumsJson.forEach(album => {
         clearChildren(containerEl)
      // this needs fixed
 
+        // fetch(`http://localhost:8080/albums/${album.id}`)
+        // .then(res => res.json())
+        // .then(album =>{
+        //     displayAlbumPage(album)
+        // })
+
+
+
         displayAlbumPage(album);
         
 
@@ -95,7 +114,6 @@ function clearChildren(element){
     }
 };
 
-displayHomePage();
 
 
 export { clearChildren }

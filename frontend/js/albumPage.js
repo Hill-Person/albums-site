@@ -1,5 +1,5 @@
 import { clearChildren } from "./app.js";
-import { albumsJson } from "./albumsJson.js";
+// import { albumsJson } from "./albumsJson.js";
 import { displaySongPage } from "./songPage.js"
 
 function displayAlbumPage(album) {
@@ -38,6 +38,8 @@ function displayAlbumPage(album) {
     const songListUL = document.createElement("ul");
     songListUL.classList.add("ul-track-list");
     console.log(album);
+
+
     album.songs.forEach(song => {
         let eachSongLi = document.createElement("li");
         eachSongLi.classList.add("track-list");
