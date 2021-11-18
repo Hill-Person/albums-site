@@ -51,7 +51,6 @@ function displayAlbumPage(album) {
 
        });
 
-
     });
     
     mainContainer.append(singleAlbum);
