@@ -55,4 +55,11 @@ public class AlbumController {
         return albumRepo.findAll();
     }
 
+    @PutMapping
+    public Iterable<Album> editAlbum(@RequestBody Album albumToEdit) {
+        if (albumToEdit.getId() !=null) {
+            albumRepo.save(albumToEdit);
+        }
+        return albumRepo.findAll();
+    }
 }

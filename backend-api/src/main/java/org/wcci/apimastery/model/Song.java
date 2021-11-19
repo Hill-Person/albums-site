@@ -71,4 +71,8 @@ public class Song {
     public String getSongRating() {
         return songRating;
     }
+
+//    public void addRating(String songRating) {
+//        songRating.add(songRating);
+//    }
 }

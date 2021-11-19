@@ -1,6 +1,4 @@
-// import { albumsJson } from "./albumsJson.js";
 import { displayAlbumPage } from "./albumPage.js";
-
 
 fetch("http://localhost:8080/albums/")
 .then(res => res.json())
@@ -41,10 +39,6 @@ headerEl.appendChild(h1El);
 mainElement.appendChild(sectionEl);
 containerEl.appendChild(headerEl);
 
-
-
-
-
 albums.forEach(album => {
 
     let albuminfoElement = document.createElement("div");
@@ -71,6 +65,7 @@ albums.forEach(album => {
     let descriptionEl = document.createElement("p");
     descriptionEl.classList.add("album-description");
     descriptionEl.innerText = album.description;
+    descriptionEl.innerText = " Album rating: " + album.albumRating;
 
     containerEl.appendChild(albuminfoElement);
     albuminfoElement.appendChild(mainElement);
@@ -83,19 +78,7 @@ albums.forEach(album => {
 
     albumtitleh3el.addEventListener("click", () => {
         clearChildren(containerEl)
-     // this needs fixed
-
-        // fetch(`http://localhost:8080/albums/${album.id}`)
-        // .then(res => res.json())
-        // .then(album =>{
-        //     displayAlbumPage(album)
-        // })
-
-
-
         displayAlbumPage(album);
-        
-
     });
 });
 
@@ -114,95 +97,7 @@ function clearChildren(element){
     }
 };
 
-
-
 export { clearChildren }
 export { displayAlbumPage }
-
-/* <h1 class="main-header">Arnold's Dive In Drive In</h1>
-
-<div class="albums-info-container">
-
-    <main class="main-content">
-        <section class="album-library">
-        <h2 class="artist-name">Godspeed You! Black Emperor</h2>
-        <h3 class="album-title">F#A# Infinity</h2>
-        <img class="album-image" im src="/images/godspeed.jpg">
-        <div class="stars">
-            <section class="album-decription">
-                <p class="album-decription">
-                
-                </p>
-            </section>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-        </div>
-        </section>
-
-            
-    </main>
-
-    <main class="main-content">
-        <section class="album-library">
-        <h2 class="artist-name">Oh Sees</h2>
-        <h3 class="album-title">Drop</h2>
-        <img class="album-image" img src="/images/ohsees.jpg">
-        <div class="stars">
-            <section class="album-decription">
-                <p class="album-decription"></p>
-            </section>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-        </div>
-        </section>
-
-    </main>
-
-    <main class="main-content">
-        <section class="album-library">
-        <h2 class="artist-name">Sleep</h2>
-        <h3 class="album-title">Dopesmoker</h2>
-        <img class="album-image" img src="/images/sleep2.jpg">
-        <div class="stars">
-            <section class="album-decription">
-                <p class="album-decription">
-
-                </p>
-            </section>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-        </div>
-        </section>
-
-    </main>
-
-    <main class="main-content">
-        <section class="album-library">
-        <h2 class="artist-name">Black Sabbath</h2>
-        <h3 class="album-title">Paranoid</h2>
-        <img class="album-image" img src="/images/blacksabbath.jpg">
-        <div class="stars">
-            <section class="album-decription">
-                <p class="album-decription">
-
-                </p>
-            </section>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-        </div>
-    </section>
-
-    </main>
-</div> */
+export { displayHomePage }
+export { formatDuration }

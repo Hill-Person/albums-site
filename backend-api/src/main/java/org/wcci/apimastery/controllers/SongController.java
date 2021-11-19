@@ -42,4 +42,12 @@ public class SongController {
         songRepo.deleteById(id);
         return songRepo.findAll();
     }
+
+    @PutMapping
+    public Iterable<Song> editSong(@RequestBody Song songToEdit) {
+        if (songToEdit.getId() !=null) {
+            songRepo.save(songToEdit);
+        }
+        return songRepo.findAll();
+    }
 }
