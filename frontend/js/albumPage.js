@@ -44,6 +44,24 @@ function displayAlbumPage(album) {
 
     const pDurationElement = document.createElement("p");
     pDurationElement.classList.add("duration");
+
+    const newSongDiv = document.createElement("div");
+    newSongDiv.classList.add("song-div");
+
+    const newSongName = document.createElement("input");
+    newSongName.type = "text";
+    newSongName.placeholder = "Enter Song Name";
+
+    const newSongArtist = document.createElement("input")
+    newSongArtist.type = "text";
+    newSongArtist.placeholder = "Enter Song Artist";
+
+    const newSongDuration = document.createElement("input");
+    newSongDuration.type = "text";
+    newSongDuration.placeholder = "Enter Song Duration"
+
+    const newSongbutton = document.createElement("button");
+    newSongbutton.innerText = "Submit New Song";
     
     album.songs.forEach(song => {
         let eachSongLi = document.createElement("li");
@@ -61,10 +79,32 @@ function displayAlbumPage(album) {
             displayHomePage(albums)
         })
     });
+
+    // newSongbutton.addEventListener("click", () => {
+    //     const newSongJson = {
+    //     "name": newAlbumName.value,
+    //     "description": newAlbumDescription.value,
+    //     "artist": newAlbumArtist.value,
+    //     "imgUrl": newAlbumImageUrl.value,
+    //     "label": newAlbumLabelName.value,
+    //     "albumRating": newAlbumRating.value,
+    //     "songs": [
+    //         "name": newSongName.value,
+    //         "artist": newSongArtist.value,
+    //         "duration": newSongDuration.value,
+    //         "comments": []
+    //     ]
+
+    //     }
+    // });
     
     mainContainer.append(singleAlbum);
     singleAlbum.append(albumArtEl, albumArtistEl, albumNameEl, albumDescEl, songListUL, backButtonElement);
-
+    newSongDiv.appendChild(newSongName);
+    newSongDiv.appendChild(newSongArtist);
+    newSongDiv.appendChild(newSongDuration);
+    newSongDiv.appendChild(newSongbutton);
+    songListUL.appendChild(newSongDiv);
 
 }
 

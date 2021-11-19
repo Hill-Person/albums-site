@@ -49,3 +49,28 @@ GET http://localhost:8080/songs/13
 
 ###
 DELETE http://localhost:8080/songs/13
+
+
+###
+PATCH http://localhost:8080/songs/
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Paranoid",
+    "description": "The Plymouth Rock of heavy rock.",
+    "artist": "Black Sabbath",
+    "imgUrl": "/images/blacksabbath.jpg",
+    "label": "Warner Bros",
+    "albumRating": "10/10",
+    "songs": [
+        {
+        "id": 2,
+        "name": "War Pigs",
+        "artist": "Black Sabbath",
+        "duration": 477,
+        "songRating": "9/10",
+        "comments": []
+        }
+    ]
+}
