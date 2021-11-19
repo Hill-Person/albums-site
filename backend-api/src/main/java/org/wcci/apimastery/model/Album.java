@@ -14,19 +14,19 @@ public class Album {
     private String artist;
     private String imgUrl;
     private String label;
-    private String comments;
+//    private String comments;
     private String albumRating;
 
     @OneToMany(mappedBy = "albums" , cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
 
-    public Album(String name, String description, String artist, String imgUrl, String label, String comments, String albumRating) {
+    public Album(String name, String description, String artist, String imgUrl, String label, String albumRating) {
         this.name = name;
         this.description = description;
         this.artist = artist;
         this.imgUrl = imgUrl;
         this.label = label;
-        this.comments = comments;
+//        this.comments = comments;
         this.albumRating = albumRating;
     }
 
@@ -57,9 +57,9 @@ public class Album {
         return label;
     }
 
-    public String getComments() {
-        return comments;
-    }
+//    public String getComments() {
+//        return comments;
+//    }
 
     public String getAlbumRating() {
         return albumRating;
