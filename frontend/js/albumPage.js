@@ -79,29 +79,24 @@ function displayAlbumPage(album) {
         
         songListUL.append(newRatingInput);
         songListUL.append(submitNewRating);
-        
 
         submitNewRating.addEventListener("click", () => {
             const newRatingJson = {
-                "songRating": newRatingInput.value
+                
             }
             fetch(`http://localhost:8080/songs/${song.id}/`, {
                 method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newRatingJson)
+                body: newRatingInput.value
             })
                 .then(res => res.json())
-                .then(song => {
-                    clearChildren(mainContainer);
-                    displayAlbumPage(mainContainer, album);
+                .then(songs => {
+                    clearChildren(singleAlbum);
+                    album.songs = songs;
+                    displayAlbumPage(album);
+                    console.log(" --method ran");
                 })
                 .catch(err => console.error(err));
-        
         })
-
-
     });
 
     backButtonElement.addEventListener("click", () => {
@@ -113,8 +108,16 @@ function displayAlbumPage(album) {
             })
     });
 
+    mainContainer.append(singleAlbum);
+    singleAlbum.append(albumArtEl, albumArtistEl, albumNameEl, albumDescEl, songListUL, backButtonElement);
+    newSongDiv.appendChild(newSongName);
+    newSongDiv.appendChild(newSongArtist);
+    newSongDiv.appendChild(newSongDuration);
+    newSongDiv.appendChild(newSongbutton);
+    songListUL.appendChild(newSongDiv);
+}
 
-
+export { displayAlbumPage }
 
 
     // newSongbutton.addEventListener("click", () => {
@@ -134,17 +137,4 @@ function displayAlbumPage(album) {
 
     //     }
     // });
-
-
-    mainContainer.append(singleAlbum);
-    singleAlbum.append(albumArtEl, albumArtistEl, albumNameEl, albumDescEl, songListUL, backButtonElement);
-    newSongDiv.appendChild(newSongName);
-    newSongDiv.appendChild(newSongArtist);
-    newSongDiv.appendChild(newSongDuration);
-    newSongDiv.appendChild(newSongbutton);
-    songListUL.appendChild(newSongDiv);
-
-}
-
-export { displayAlbumPage };
 

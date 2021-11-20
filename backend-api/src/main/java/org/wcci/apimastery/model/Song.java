@@ -72,8 +72,7 @@ public class Song {
         return songRating;
     }
 
-    public String addRating(String newRating){
-        return songRating = newRating;
-
+    public void addRating(String newRating){
+        songRating = newRating;
     }
 }
