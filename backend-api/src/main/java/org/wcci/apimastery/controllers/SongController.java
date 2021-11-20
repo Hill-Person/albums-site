@@ -29,12 +29,19 @@ public class SongController {
     }
 
 
+//    @PatchMapping("/{id}")
+//    public Song addComment(@PathVariable Long id, @RequestBody String userComment) {
+//        Song currentSong = songRepo.findById(id).get();
+//        currentSong.addComment(userComment);
+//        songRepo.save(currentSong);
+//        return currentSong;
+//    }
     @PatchMapping("/{id}")
-    public Song addComment(@PathVariable Long id, @RequestBody String userComment) {
+    public Iterable<Song> addRating(@RequestBody String userRating, @PathVariable Long id){
         Song currentSong = songRepo.findById(id).get();
-        currentSong.addComment(userComment);
+        currentSong.addRating(userRating);
         songRepo.save(currentSong);
-        return currentSong;
+        return songRepo.findAll();
     }
 
     @DeleteMapping("/{id}")
@@ -50,4 +57,5 @@ public class SongController {
         }
         return songRepo.findAll();
     }
+
 }

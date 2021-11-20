@@ -6,7 +6,7 @@ import { formatDuration } from "./app.js";
 function displayAlbumPage(album) {
 
     console.log("made it to album page");
-    
+
     const mainContainer = document.querySelector(".container");
 
     const mainHeader = document.createElement("h1");
@@ -62,23 +62,60 @@ function displayAlbumPage(album) {
 
     const newSongbutton = document.createElement("button");
     newSongbutton.innerText = "Submit New Song";
-    
+
     album.songs.forEach(song => {
         let eachSongLi = document.createElement("li");
         eachSongLi.classList.add("track-list");
-        eachSongLi.innerText= song.name + (" ") + formatDuration(song.duration);
+        eachSongLi.innerText = song.name + (" ") + " " + song.songRating + " (" + formatDuration(song.duration) + ")";
         pDurationElement.innerText = ("test");
-        songListUL.append(eachSongLi);  
+        songListUL.append(eachSongLi);
+
+        const newRatingInput = document.createElement("input");
+        newRatingInput.type = "text";
+        newRatingInput.placeholder = "Enter New Rating";
+
+        const submitNewRating = document.createElement("button");
+        submitNewRating.innerText = "Submit";
+        
+        songListUL.append(newRatingInput);
+        songListUL.append(submitNewRating);
+        
+
+        submitNewRating.addEventListener("click", () => {
+            const newRatingJson = {
+                "songRating": newRatingInput.value
+            }
+            fetch(`http://localhost:8080/songs/${song.id}/`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newRatingJson)
+            })
+                .then(res => res.json())
+                .then(song => {
+                    clearChildren(mainContainer);
+                    displayAlbumPage(mainContainer, album);
+                })
+                .catch(err => console.error(err));
+        
+        })
+
+
     });
-    
+
     backButtonElement.addEventListener("click", () => {
         clearChildren(mainContainer);
         fetch("http://localhost:8080/albums/")
-        .then(res => res.json())
-        .then(albums => {
-            displayHomePage(albums)
-        })
+            .then(res => res.json())
+            .then(albums => {
+                displayHomePage(albums)
+            })
     });
+
+
+
+
 
     // newSongbutton.addEventListener("click", () => {
     //     const newSongJson = {
@@ -97,7 +134,8 @@ function displayAlbumPage(album) {
 
     //     }
     // });
-    
+
+
     mainContainer.append(singleAlbum);
     singleAlbum.append(albumArtEl, albumArtistEl, albumNameEl, albumDescEl, songListUL, backButtonElement);
     newSongDiv.appendChild(newSongName);

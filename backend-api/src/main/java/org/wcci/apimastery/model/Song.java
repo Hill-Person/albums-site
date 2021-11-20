@@ -72,7 +72,8 @@ public class Song {
         return songRating;
     }
 
-//    public void addRating(String songRating) {
-//        songRating.add(songRating);
-//    }
+    public String addRating(String newRating){
+        return songRating = newRating;
+
+    }
 }
