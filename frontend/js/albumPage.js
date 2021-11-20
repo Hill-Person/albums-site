@@ -89,15 +89,17 @@ function displayAlbumPage(album) {
                 body: newRatingInput.value
             })
                 .then(res => res.json())
-                .then(songs => {
+                .then(song => {
                     clearChildren(singleAlbum);
-                    album.songs = songs;
+                    song.songRating = song;
                     displayAlbumPage(album);
                     console.log(" --method ran");
                 })
                 .catch(err => console.error(err));
         })
+        
     });
+
 
     backButtonElement.addEventListener("click", () => {
         clearChildren(mainContainer);

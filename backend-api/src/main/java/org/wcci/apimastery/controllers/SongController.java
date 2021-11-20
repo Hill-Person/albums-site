@@ -37,11 +37,11 @@ public class SongController {
 //        return currentSong;
 //    }
     @PatchMapping("/{id}")
-    public Iterable<Song> addRating(@RequestBody String userRating, @PathVariable Long id){
+    public Song addRating(@RequestBody String userRating, @PathVariable Long id){
         Song currentSong = songRepo.findById(id).get();
         currentSong.addRating(userRating);
         songRepo.save(currentSong);
-        return songRepo.findAll();
+        return songRepo.findById(id).get();
     }
 
     @DeleteMapping("/{id}")
