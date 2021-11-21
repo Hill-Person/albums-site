@@ -2,12 +2,15 @@ import { clearChildren } from "./app.js";
 import { displaySongPage } from "./songPage.js";
 import { displayHomePage } from "./app.js";
 import { formatDuration } from "./app.js";
+import { displayAlbumCreation } from "./createAlbum.js"
 
 function displayAlbumPage(album) {
 
-    console.log("made it to album page");
+    
 
-    const mainContainer = document.querySelector(".container");
+    // console.log("made it to album page");
+
+    let mainContainer = document.querySelector(".container");
 
     const mainHeader = document.createElement("h1");
     mainHeader.innerText = "Arnold's Dive In Drive In";
@@ -52,18 +55,25 @@ function displayAlbumPage(album) {
     newSongName.type = "text";
     newSongName.placeholder = "Enter Song Name";
 
-    const newSongArtist = document.createElement("input")
+    const newSongArtist = document.createElement("input");
     newSongArtist.type = "text";
-    newSongArtist.placeholder = "Enter Song Artist";
+    newSongArtist.placeholder = "Enter Artist Name";
+
+    const newSongRating = document.createElement("input")
+    newSongRating.type = "text";
+    newSongRating.placeholder = "Enter Song Rating";
 
     const newSongDuration = document.createElement("input");
     newSongDuration.type = "text";
     newSongDuration.placeholder = "Enter Song Duration"
 
-    const newSongbutton = document.createElement("button");
-    newSongbutton.innerText = "Submit New Song";
+    const newSongButton = document.createElement("button");
+    newSongButton.innerText = "Submit New Song";
+
+    console.log("made it to album page");
 
     album.songs.forEach(song => {
+        
         let eachSongLi = document.createElement("li");
         eachSongLi.classList.add("track-list");
         eachSongLi.innerText = song.name + (" ") + " " + song.songRating + " (" + formatDuration(song.duration) + ")";
@@ -76,6 +86,7 @@ function displayAlbumPage(album) {
 
         const submitNewRating = document.createElement("button");
         submitNewRating.innerText = "Submit";
+        submitNewRating.classList.add("new-rating")
         
         songListUL.append(newRatingInput);
         songListUL.append(submitNewRating);
@@ -90,22 +101,51 @@ function displayAlbumPage(album) {
             })
                 .then(res => res.json())
                 .then(song => {
-                    clearChildren(singleAlbum);
-                    song.songRating = song;
-                    displayAlbumPage(album);
-                    console.log(" --method ran");
+                    eachSongLi.innerText = song.name + (" ") + " " + song.songRating + " (" + formatDuration(song.duration) + ")";
                 })
                 .catch(err => console.error(err));
         })
         
+        
     });
 
+    newSongButton.addEventListener("click", () => {
+        const newSongJson = {
+            
+            
+            "name": newSongName.value,
+            "artist": newSongArtist.value,
+            "duration": newSongDuration.value,
+            "songRating": newSongRating.value,
+            
+        }
+        fetch(`http://localhost:8080/albums/${album.id}/songs`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newSongJson)
+        })
+        .then(res => res.json())
+        .then(songs => {
+            // album.songs = songs;
+            clearChildren(mainContainer);
+            displayAlbumPage(album);
+            console.log(album.songs);
+        })
+        .catch(err => console.error(err));
+
+    })
+
+
+    const containerEl = document.querySelector(".container");
 
     backButtonElement.addEventListener("click", () => {
-        clearChildren(mainContainer);
         fetch("http://localhost:8080/albums/")
             .then(res => res.json())
             .then(albums => {
+                clearChildren(containerEl);
+                displayAlbumCreation(containerEl);
                 displayHomePage(albums)
             })
     });
@@ -114,29 +154,11 @@ function displayAlbumPage(album) {
     singleAlbum.append(albumArtEl, albumArtistEl, albumNameEl, albumDescEl, songListUL, backButtonElement);
     newSongDiv.appendChild(newSongName);
     newSongDiv.appendChild(newSongArtist);
+    newSongDiv.appendChild(newSongRating);
     newSongDiv.appendChild(newSongDuration);
-    newSongDiv.appendChild(newSongbutton);
+    newSongDiv.appendChild(newSongButton);
     songListUL.appendChild(newSongDiv);
 }
 
 export { displayAlbumPage }
-
-
-    // newSongbutton.addEventListener("click", () => {
-    //     const newSongJson = {
-    //     "name": newAlbumName.value,
-    //     "description": newAlbumDescription.value,
-    //     "artist": newAlbumArtist.value,
-    //     "imgUrl": newAlbumImageUrl.value,
-    //     "label": newAlbumLabelName.value,
-    //     "albumRating": newAlbumRating.value,
-    //     "songs": [
-    //         "name": newSongName.value,
-    //         "artist": newSongArtist.value,
-    //         "duration": newSongDuration.value,
-    //         "comments": []
-    //     ]
-
-    //     }
-    // });
 

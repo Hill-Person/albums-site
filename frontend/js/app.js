@@ -1,23 +1,17 @@
 import { displayAlbumPage } from "./albumPage.js";
 import { displayAlbumCreation } from "./createAlbum.js";
+import { displayAlbums } from "./displayAlbums.js";
 
 const containerEl = document.querySelector(".container");
 let mainElement = document.createElement("main-content")
 mainElement.classList.add("main-content");
 
-fetch("http://localhost:8080/albums/")
-    .then(res => res.json())
-    .then(albums => {
-        displayHomePage(albums)
-    })
+displayAlbums(mainElement);
 
 displayAlbumCreation(containerEl);
 
 function displayHomePage(albums) {
 
-    console.log(albums);
-
-    const mainContainer = document.querySelector(".container");
     clearChildren(mainElement);
 
     let headerEl = document.createElement("header");
@@ -84,7 +78,8 @@ function displayHomePage(albums) {
 
         albumtitleh3el.addEventListener("click", () => {
             clearChildren(containerEl)
-            displayAlbumPage(album);
+            displayAlbumPage(album, containerEl);
+            console.log(album);
         });
 
         deleteAlbumButton.addEventListener("click", () => {
@@ -93,7 +88,7 @@ function displayHomePage(albums) {
                 })
                 .then(res => res.json())
                 .then(albums => {
-                    clearChildren(mainElement);
+                    clearChildren(sectionEl);
                     displayHomePage(albums)
                 })
         });

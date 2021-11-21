@@ -150,8 +150,9 @@
     border-radius: 15px;
   }
 
-  button {
-
+  .rating-button {
+    background-color: #FE9900;
+    align-items: center;
   }
 
   input {
