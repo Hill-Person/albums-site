@@ -1,9 +1,6 @@
 package org.wcci.apimastery.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
@@ -11,23 +8,33 @@ public class Album {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String name;
     private String description;
+    private String artist;
+    private String imgUrl;
+    private String label;
+//    private String comments;
+    private String albumRating;
 
-    @OneToMany(mappedBy = "albums")
+    @OneToMany(mappedBy = "albums" , cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
 
-    public Album(String name, String description) {
+    public Album(String name, String description, String artist, String imgUrl, String label, String albumRating) {
         this.name = name;
         this.description = description;
+        this.artist = artist;
+        this.imgUrl = imgUrl;
+        this.label = label;
+//        this.comments = comments;
+        this.albumRating = albumRating;
     }
 
     protected Album(){
         //zero argument constructor
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -39,7 +46,28 @@ public class Album {
         return description;
     }
 
+    public String getArtist() {
+        return artist;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+    public String getLabel() {
+        return label;
+    }
+
+//    public String getComments() {
+//        return comments;
+//    }
+
+    public String getAlbumRating() {
+        return albumRating;
+    }
+
     public Collection<Song> getSongs() {
         return songs;
     }
+
+
 }

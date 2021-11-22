@@ -2,35 +2,41 @@ package org.wcci.apimastery.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-//import javax.persistence.*;
+import javax.persistence.*;
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Song {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String name;
     private String artist;
+    private int duration;
+    private String songRating;
+
 
     @ManyToOne
     @JsonIgnore
     private Album albums;
 
-    public Song(String name, String artist, Album album) {
+    @ElementCollection
+    private Collection<String> comments;
+
+    public Song(String name, String artist, Album albums, int minutes, int seconds, String songRating) {
         this.name = name;
         this.artist = artist;
-        this.albums = album;
+        this.albums = albums;
+        this.duration = minutes * 60 + seconds;
+        this.songRating = songRating;
     }
 
     protected Song(){
         //zero argument constructor
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -42,7 +48,31 @@ public class Song {
         return artist;
     }
 
-    public Album getAlbum() {
+    public Album getAlbums() {
         return albums;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void addAlbum(Album album){
+        albums = album;
+    }
+
+    public Collection<String> getComments() {
+        return comments;
+    }
+
+    public void addComment(String comment) {
+        comments.add(comment);
+    }
+
+    public String getSongRating() {
+        return songRating;
+    }
+
+    public void addRating(String newRating){
+        songRating = newRating;
     }
 }

@@ -1,0 +1,76 @@
+###
+GET http://localhost:8080/
+
+###
+
+GET http://localhost:8080/albums/
+
+###
+
+GET http://localhost:8080/albums/10
+
+
+###
+POST http://localhost:8080/albums/
+Content-Type: application/json
+
+# {
+#     "name": "A NfdsdfdsfdsEW ALBUM",
+#     "description": "DESCRIPTION OF NEW ALBUM",
+#     "songs": []
+# }
+
+
+###
+PATCH  http://localhost:8080/albums/100
+Content-Type: application/json
+
+# {
+#     "name": "ssssssssamsple Name",
+#     "artist": "dsdsadassample artist",
+#     "albums": [
+#         {
+#             "id": 100,
+#             "name": "album name",
+#             "description": "album description"
+#         }
+#     ]
+# }
+
+###
+
+DELETE http://localhost:8080/albums/23
+
+###
+GET http://localhost:8080/songs/
+
+###
+GET http://localhost:8080/songs/13
+
+###
+DELETE http://localhost:8080/songs/13
+
+
+###
+PATCH http://localhost:8080/songs/
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Paranoid",
+    "description": "The Plymouth Rock of heavy rock.",
+    "artist": "Black Sabbath",
+    "imgUrl": "/images/blacksabbath.jpg",
+    "label": "Warner Bros",
+    "albumRating": "10/10",
+    "songs": [
+        {
+        "id": 2,
+        "name": "War Pigs",
+        "artist": "Black Sabbath",
+        "duration": 477,
+        "songRating": "9/10",
+        "comments": []
+        }
+    ]
+}
