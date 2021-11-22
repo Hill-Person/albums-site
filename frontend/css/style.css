@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;1,300;1,500&display=swap');
 * {
     background-color: #633b31;
 }
@@ -197,6 +198,7 @@ navbar a:hover,
 /*Songs Comment Section Style*/
 .comments-section * {
     background: #676B30;
+    font-family: poppins;
 }
 
 .comments-section {
@@ -223,18 +225,42 @@ navbar a:hover,
     display: flex;
 }
 .comment-box .profile-pic{
-    width: 100px;
-    height: 68px;
+    width: 137px;
+    height: 63px;
     border-radius: 50%;
     background: rgb(12, 102, 19);
     color: rgb(255, 255, 255);
     font-size: 2.5em;
     text-align: center;
-    line-height: 68px;
+    line-height: 62px;
     margin-right: 10px;
 }
 .comment-box .comment-text{
     text-align: justify;
+}
+.btn{
+    padding: 5px;
+    border: 1px solid black;
+    font-size: 1em;
+    font-weight: 600;
+}
+.btn.btn-success{
+    color: white;
+    background: green;
+}
+.btn.btn-reply{
+    color: white;
+    background: #FE9900;
+}
+.btn.btn-edit{
+    color:#fff;
+    background: rgba(0, 0, 0, 0.2);
+}
+.btn-edit i{
+    color: rgb(155, 250, 112);
+}
+.btn-reply i{
+    color: rgb(12, 81, 160);
 }
 .new-comment{
     width: 94%;
@@ -259,4 +285,59 @@ navbar a:hover,
     display: block;
     justify-content: flex-end;
     margin-top: 10px;
+}
+
+/*Albums Add*/
+.add-album-wrapper *{
+    background: #676B30;
+    font-family: poppins;
+    font-size: 1rem;
+}
+.add-album-wrapper{
+    background: #676B30;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+.add-album-form-wrapper{
+    width: 100%;
+}
+.form-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.add-album-form-wrapper .form-row:first-child{
+    margin-top: 0;
+}
+.form-row .form-col-6{
+    width: 48%;
+}
+.form-group .form-input{
+    width: 100%;
+}
+.form-input{
+    background: white;
+    padding: 5px;
+    border: 1px solid #6d6c6c;
+    border-radius: 5px;
+    font-size: .8rem;
+}
+.form-row label{
+    color: white;
+}
+.form-row label.error{
+    font-size: .5rem;
+    font-style: italic;
+}
+.text-red{
+    color: red;
+}
+.form-actions{
+    display: flex;
+    justify-content: flex-end;
+}
+.form-actions button{
+    float: right;
 }
