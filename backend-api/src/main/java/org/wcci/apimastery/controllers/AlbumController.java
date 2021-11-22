@@ -37,7 +37,7 @@ public class AlbumController {
     }
 
     @PatchMapping("/{id}/songs")
-    public Song addSong(@RequestBody Song songToAdd, @PathVariable Long id) {
+    public Album addSong(@RequestBody Song songToAdd, @PathVariable Long id) {
         Optional<Album> currentAlbum = albumRepo.findById(id);
 
             if(currentAlbum.isPresent()) {
@@ -46,7 +46,7 @@ public class AlbumController {
             albumRepo.save(currentAlbum.get());
             }
 
-        return songToAdd;
+        return currentAlbum.get();
     }
 
     @DeleteMapping("/{id}")

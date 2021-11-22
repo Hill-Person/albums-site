@@ -6,10 +6,6 @@ import { displayAlbumCreation } from "./createAlbum.js"
 
 function displayAlbumPage(album) {
 
-    
-
-    // console.log("made it to album page");
-
     let mainContainer = document.querySelector(".container");
 
     const mainHeader = document.createElement("h1");
@@ -76,20 +72,36 @@ function displayAlbumPage(album) {
         
         let eachSongLi = document.createElement("li");
         eachSongLi.classList.add("track-list");
-        eachSongLi.innerText = song.name + (" ") + " " + song.songRating + " (" + formatDuration(song.duration) + ")";
+        eachSongLi.innerText = song.name + (" ") + " " + song.songRating.toFixed(2) + " (" + formatDuration(song.duration) + ")";
         pDurationElement.innerText = ("test");
         songListUL.append(eachSongLi);
 
+        //edit rating
         const newRatingInput = document.createElement("input");
         newRatingInput.type = "text";
         newRatingInput.placeholder = "Enter New Rating";
-
         const submitNewRating = document.createElement("button");
         submitNewRating.innerText = "Submit";
-        submitNewRating.classList.add("new-rating")
-        
+        submitNewRating.classList.add("new-rating");
+
+        //edit song
+        const editSongInput = document.createElement("input");
+        editSongInput.type = "text";
+        editSongInput.placeholder = "Edit Song";
+        const editSong = document.createElement("button");
+        editSong.innerText = "Edit Song";
+        editSong.classList.add("new-rating");
+
         songListUL.append(newRatingInput);
         songListUL.append(submitNewRating);
+        songListUL.append(editSongInput);
+        songListUL.append(editSong);
+
+        submitEditSong.addEventListener("click", () =>{
+            fetch(`http://localhost:8080/songs`)
+
+
+        })
 
         submitNewRating.addEventListener("click", () => {
             const newRatingJson = {
@@ -101,7 +113,7 @@ function displayAlbumPage(album) {
             })
                 .then(res => res.json())
                 .then(song => {
-                    eachSongLi.innerText = song.name + (" ") + " " + song.songRating + " (" + formatDuration(song.duration) + ")";
+                    eachSongLi.innerText = song.name + (" ") + " " + song.songRating.toFixed(2) + " (" + formatDuration(song.duration) + ")";
                 })
                 .catch(err => console.error(err));
         })
@@ -111,8 +123,6 @@ function displayAlbumPage(album) {
 
     newSongButton.addEventListener("click", () => {
         const newSongJson = {
-            
-            
             "name": newSongName.value,
             "artist": newSongArtist.value,
             "duration": newSongDuration.value,
@@ -127,16 +137,15 @@ function displayAlbumPage(album) {
             body: JSON.stringify(newSongJson)
         })
         .then(res => res.json())
-        .then(songs => {
-            // album.songs = songs;
+        .then(album => {
+            console.log(album.songs);
+            
             clearChildren(mainContainer);
             displayAlbumPage(album);
-            console.log(album.songs);
         })
         .catch(err => console.error(err));
 
     })
-
 
     const containerEl = document.querySelector(".container");
 
@@ -144,7 +153,7 @@ function displayAlbumPage(album) {
         fetch("http://localhost:8080/albums/")
             .then(res => res.json())
             .then(albums => {
-                clearChildren(containerEl);
+                clearChildren(mainContainer);
                 displayAlbumCreation(containerEl);
                 displayHomePage(albums)
             })

@@ -60,3 +60,10 @@ PATCH http://localhost:8080/songs/3
 
 3213WWWWWWWWWW
 
+###
+PUT http://localhost:8080/songs/3
+Content-Type: application/json
+
+{
+    "name": "wWWWWWWWasd"
+}

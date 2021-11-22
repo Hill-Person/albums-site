@@ -2,9 +2,13 @@ package org.wcci.apimastery.controllers;
 
 import org.springframework.http.server.RequestPath;
 import org.springframework.web.bind.annotation.*;
+import org.wcci.apimastery.model.Album;
 import org.wcci.apimastery.model.Song;
 import org.wcci.apimastery.repositories.AlbumRepository;
 import org.wcci.apimastery.repositories.SongRepository;
+
+import java.nio.file.Path;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/songs")
@@ -39,7 +43,7 @@ public class SongController {
     @PatchMapping("/{id}")
     public Song addRating(@RequestBody String userRating, @PathVariable Long id){
         Song currentSong = songRepo.findById(id).get();
-        currentSong.addRating(userRating);
+        currentSong.addRating(Float.parseFloat(userRating));
         songRepo.save(currentSong);
         return songRepo.findById(id).get();
     }
@@ -50,12 +54,15 @@ public class SongController {
         return songRepo.findAll();
     }
 
-    @PutMapping
-    public Iterable<Song> editSong(@RequestBody Song songToEdit) {
+    @PutMapping("/{id}")
+    public Iterable<Album> editSong(@RequestBody Song songToEdit, @PathVariable Long id) {
+//        Optional<Album> currentAlbum = albumRepo.findById(id);
+
         if (songToEdit.getId() !=null) {
             songRepo.save(songToEdit);
         }
-        return songRepo.findAll();
+
+        return albumRepo.findAll();
     }
 
 }
